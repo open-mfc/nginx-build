@@ -1,0 +1,3561 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OA.Ocpay.Core</name>
+    </assembly>
+    <members>
+        <member name="T:OA.Ocpay.Core.Attributes.AntTableColumnAttribute">
+            <summary>
+            vue.ant.design 表格控制特性
+            https://vue.ant.design/components/table-cn/#components-table-demo-customized-filter-panel
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.TypeId">
+            <summary>
+            隐藏此输出
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.#ctor(System.String,System.Int32,System.Boolean,System.String,System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            构造器
+            </summary>
+            <param name="title">显示的标题内容,20像素一个汉字，建议和width配合使用</param>
+            <param name="width">列宽度</param>
+            <param name="enableSearch">是否启用搜索列</param>
+            <param name="align">列对其方式'left' | 'right' | 'center'</param>
+            <param name="dataIndex">前端data列绑定的唯一键</param>
+            <param name="sorter">是否支持排序</param>
+            <param name="hide">是否隐藏列</param>
+            <param name="fix">固定列 left|right</param>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.Hide">
+            <summary>
+            控制该列是否隐藏
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.Align">
+            <summary>
+            设置列内容的对齐方式 | 默认值:left
+            'left' | 'right' | 'center'
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.DataIndex">
+            <summary>
+            列数据在数据项中对应的 key，支持 a.b.c 的嵌套写法 | 默认值:
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.Fixed">
+            <summary>
+            列是否固定，可选 true(等效于 left) 'left' 'right' | 默认值:false
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.Title">
+            <summary>
+            列头显示文字 | 默认值:
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.Width">
+            <summary>
+            列宽度 | 默认值:
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.Key">
+            <summary>
+            Vue 需要的 key，如果已经设置了唯一的 dataIndex，可以忽略这个属性 | 默认值:
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.Sorter">
+            <summary>
+            排序函数，本地排序使用一个函数(参考 Array.sort 的 compareFunction)，需要服务端排序可设为 true | 默认值:
+            【服务端 做排序，只用true or false】
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.AntTableColumnAttribute.ScopedSlots">
+            <summary>
+            使用columns时，可以通过该属性配置支持slot-scope的属性，如 scopedSlots: { customRender: 'XXX'} | 默认值:
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Attributes.ExpressionFilterOperationAttribute">
+            <summary>
+            操作类型特性
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Attributes.ExpressionFilterOperationAttribute.#ctor(OA.Ocpay.Core.Extensions.Operation)">
+            <summary>
+            构造器
+            </summary>
+            <param name="operation">操作类型</param>
+        </member>
+        <member name="P:OA.Ocpay.Core.Attributes.ExpressionFilterOperationAttribute.Operation">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Common.Constants">
+            <summary>
+             常量
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Common.HashAlgorithmHelper">
+            <summary>
+            散列算法
+            比官方demo性能高5倍
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Common.HashAlgorithmHelper.ComputeHash``1(System.String)">
+            <summary>
+            哈希计算
+            </summary>
+            <typeparam name="THashAlgorithm"></typeparam>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Common.THashAlgorithmInstances`1">
+            <summary>
+            哈希算法服务单例对象
+            </summary>
+            <typeparam name="THashAlgorithm"></typeparam>
+        </member>
+        <member name="F:OA.Ocpay.Core.Common.THashAlgorithmInstances`1.instance">
+            <summary>
+            线程静态变量。
+            即：这个变量在每个线程中都是唯一的。
+            再结合泛型类实现了该变量在不同泛型或不同的线程先的变量都是唯一的。
+            这样做的目的是为了避开多线程问题。
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Common.THashAlgorithmInstances`1.Create">
+            <summary>
+            寻找 THashAlgorithm 类型下的 Create 静态方法，并执行它。
+            如果没找到，则执行 Activator.CreateInstance 调用构造方法创建实例。
+            如果 Activator.CreateInstance 方法执行失败，它会抛出异常。
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo">
+            <summary>
+            加盟商 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.BrandId">
+            <summary>
+            自增ID
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.ComId">
+            <summary>
+            企业id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.BrandName">
+            <summary>
+            品牌名称
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.BrandViceName">
+            <summary>
+            品牌别名 主平台展示调用
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.MainIndustry">
+            <summary>
+            所属主行业
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.EstablishTime">
+            <summary>
+            成立时间	
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.BrandCredentialImg">
+            <summary>
+            商标证书复印件
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.BrandWarrantImg">
+            <summary>
+            商标使用授权书
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.BrandTel">
+            <summary>
+            品牌联系方式
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.Type">
+            <summary>
+            品牌类型（0字号，1商标，2代理，3初创，-1个人品牌）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.AddUserId">
+            <summary>
+            添加员工
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.AddTime">
+            <summary>
+            入驻时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.Remark">
+            <summary>
+            审核原因，备注
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.AgentTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.AllMoney">
+            <summary>
+            注册资产
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.IsLock">
+            <summary>
+            是否屏蔽所有前台推广展示
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.IsShow">
+            <summary>
+            等待上线:0,普通会员:1,免费会员:2,,铜牌VIP:3,白银VIP:4,黄金VIP:5,钻石VIP:6,新闻营销:7,关键词SEO:8
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.Agreement">
+            <summary>
+            品牌协议
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.UrlAlias">
+            <summary>
+            url目录别名（全拼)
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.PageTitle">
+            <summary>
+            品牌首页页面标题
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.PageKeywords">
+            <summary>
+            品牌首页页面关键字
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.PageDescription">
+            <summary>
+            品牌首页页面描述
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.VipStarttime">
+            <summary>
+            会员开始时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.VipEndtime">
+            <summary>
+            会员结束时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.IsOpen">
+            <summary>
+            品牌是否开启授权（0是false，1是true）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.UsePosterTdk">
+            <summary>
+            品牌海报页是否使用品牌TDK 默认0不使用
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.PosterTitle">
+            <summary>
+            海报页页面标题
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.PosterKeywords">
+            <summary>
+            海报页页面关键字
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.PosterDescription">
+            <summary>
+            海报页页面描述
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.UseIndexTdk">
+            <summary>
+            品牌首页是否使用单独TDK 默认0不使用
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.LockCbo">
+            <summary>
+            是否锁定cbo禁止修改   0不锁 1锁定
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.IsSupply">
+            <summary>
+            是否供货商
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.BrandIndexInfo.AgentId">
+            <summary>
+            代理商id
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo">
+            <summary>
+            运营商 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.ComIndexId">
+            <summary>
+            企业自增ID
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.ComName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.RegisteArea">
+            <summary>
+            注册地
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.LegalPerson">
+            <summary>
+            法人代表
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.EstablishTime">
+            <summary>
+            成立时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.BusinessNature">
+            <summary>
+            公司性质(0有限责任公司,1股份有限责任公司,2一人有限责任公司,3中外合资（港澳台资）,4中外合作企业,5外国独资企业,6法人分支机构,7其他)
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.RegisterBankroll">
+            <summary>
+            注册资金
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.Business">
+            <summary>
+            经营范围
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.RegisteArea1">
+            <summary>
+            营业执照所在地
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.RegisteArea2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.RegisteNumber">
+            <summary>
+            营业执照注册号
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.RegisteImg">
+            <summary>
+            营业执照副本图片
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.TaxRegistrationImg">
+            <summary>
+            税务登记证副本图片
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.SystemCode">
+            <summary>
+            组织机构代码
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.SystemCodeImg">
+            <summary>
+            组织机构代码证副本图片
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.PetitionId">
+            <summary>
+            申请人身份证号
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.PetitionIdImg">
+            <summary>
+            身份证图片
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.WarrantImg">
+            <summary>
+            授权书图片
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.AddUserId">
+            <summary>
+            增加用户名
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.AddTime">
+            <summary>
+            增加时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.Remarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.UserType">
+            <summary>
+            1企业用户，2个人用户,3运营商
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.CertificateType">
+            <summary>
+            证件类型 0代表三证 1代表三证合一
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.CheckStatus">
+            <summary>
+            0待核查 1已核查 2已解散
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.AdminMobile">
+            <summary>
+            企业管理员手机号码
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.AdminPassword">
+            <summary>
+            购自由运营商后台登录密码
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.ComTel">
+            <summary>
+            企业电话（超市投诉电话）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.ComLogo">
+            <summary>
+            企业logo
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.ComAdwords">
+            <summary>
+            企业广告语
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.ComIndexInfo.WxQrUrl">
+            <summary>
+            运营商服务号二维码链接
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo">
+            <summary>
+            Device 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.StoreId">
+            <summary>
+            门店id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.BrandId">
+            <summary>
+            品牌名
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.DeviceInfo">
+            <summary>
+            设备编号
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.DeviceType">
+            <summary>
+            设备类型 1代表监控  2代表智能门禁  3代表身份验证 4代表结算台 5只进门禁 6只出门禁 7只进单门门禁
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.DeviceState">
+            <summary>
+            0、关闭，1、正常，2、检修，3、异常
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.DeviceName">
+            <summary>
+            设备中文名称
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.AddTime">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.OnlineTime">
+            <summary>
+            设备最后检测在线时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.DeviceCfg">
+            <summary>
+            设备配置信息
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.MqqtCfg">
+            <summary>
+            mqqt配置信息
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.ReaderCfg">
+            <summary>
+            读写器配置信息
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.IocCfg">
+            <summary>
+            IO控制器配置信息
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.SocketCfg">
+            <summary>
+            套接配置
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.IsLock">
+            <summary>
+            是否锁定上（1锁，0末锁）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.IsDelete">
+            <summary>
+            是否删除（1删除，0未删除）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.VersionInfoId">
+            <summary>
+            对应vmall_device_version v_id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.Online">
+            <summary>
+            是否链接到Broker
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.DeviceMac">
+            <summary>
+            设备mac地址
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.SoftwareVersion">
+            <summary>
+            当前设备运行的软件版本
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.ErrCode">
+             <summary>
+             设备异常代码
+            0：		表示正常
+            2：		[计算台]读写器断开链接
+            100001：		[门禁]外门错误
+            100002：		[门禁]门禁内门错误
+            100004:		[门禁]13信号错误[地毯]
+            100008：		[门禁]13信号错误[红外]
+            100016：		[门禁]按下门铃
+            100032：		[门禁]交流电错误
+            100064：		[门禁]电池错误
+            100128：		[门禁]紧急开关开启
+            100256：		[门禁]紧急开启流程
+             </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.ChannelNo">
+            <summary>
+            出入口设备关联监控通道 0-8 为有效值
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.DeviceModle">
+            <summary>
+            设备型号  状态树种id=4的列表
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.DeviceIndexInfo.CpuUsage">
+            <summary>
+            CPU使用率
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo">
+            <summary>
+            门店 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.StoreId">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.BrandId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.FImg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.StoreLogo">
+            <summary>
+            门店logo （小程序门店列表logo）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Area">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Area1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Area2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.BmapX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.BmapY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.LinkJson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Summary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Addtime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.StoreName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.StoreType">
+            <summary>
+            门店类型  1直营店  2加盟店
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.IsTop">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.IsCheck">
+            <summary>
+            状态：0、等待审核，1、通过审核 ，2、未通过
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Sort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.CheckRemark">
+            <summary>
+            审核备注
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.AlbumImgid">
+            <summary>
+            关联相册图片字段
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.MainPublish">
+            <summary>
+            是否已发布到主站 默认未发布
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.MainPublishTime">
+            <summary>
+            发布至主站的时间 默认空
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.OpenTime">
+            <summary>
+            营业开始时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.CloseTime">
+            <summary>
+            营业结束时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.DeliveryStarttime">
+            <summary>
+            O2O配送开始时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.DeliveryEndtime">
+            <summary>
+            O2O配送结束时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.CreditLimit">
+            <summary>
+            信用积分门槛
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.IsCheckopenclosetime">
+            <summary>
+            是否核查过营业时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.DeviceRunstatus">
+            <summary>
+            店内设备状态 0安装中 1调试中 2正式运行(监控) 3已关闭 4正式运行(不监控)
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.ManageStatus">
+            <summary>
+            0装修调试、1打码上货、2开店试营、3正式营业、4关门闭店
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Environment">
+            <summary>
+            门店环境 0：测试门店 1正式门店
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.Responsible">
+            <summary>
+            店铺责任人id集合,从左往右依次为第1责任人(主要负责人) 第2责任人 ...  [TxoooBrandShop.dbo.vmall_service_notify_user表id]
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.OpenDoorLevel">
+            <summary>
+            门店开门等级（无人超市项目实体说明为准）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.O2oPostage">
+            <summary>
+            门店时段邮费json
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.OpenDoorJson">
+            <summary>
+            开门等级时段配置
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Mch.StoreInfo.OutId">
+            <summary>
+            外部编码
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderReceiveInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderReceiveInfo.Name">
+            <summary>
+            收货人姓名
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderReceiveInfo.Tel">
+            <summary>
+            收货人电话
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderReceiveInfo.Address">
+            <summary>
+            收货地址
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderReceiveInfo.GoodsInfo">
+            <summary>
+            商品信息
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderReceiveInfo.Postage">
+            <summary>
+            邮费
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderReceiveInfo.ExpectedTime">
+            <summary>
+            期望送达时间
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo">
+            <summary>
+            订单数据 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.OrderNum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.TotalAmountCny">
+            <summary>
+            待支付金额，当前币种转换为人民币的金额
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.Deduct">
+            <summary>
+            红包或者优惠券抵扣金额
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.AddTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.BrandId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.UserWxId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.AddressId">
+            <summary>
+            收货人信息
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.ExpressId">
+            <summary>
+            配送方式 1-自提 2-快递 3-邮政快递 4-其他 5-物流 6-店家配送 7-平台配送（卖客骑士）
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.PayType">
+            <summary>
+            支付方式 默认1：微信支付 2-货到付款 3-线下支付 4-支付宝 5余额支付 101第三方通知支付
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.TotalAmount">
+            <summary>
+            总金额
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.DiscountDetail">
+            <summary>
+            订单优惠金额详情 json格式
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.OrderType">
+            <summary>
+            0订货订单 1超市订单 2外送订单
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.OrderState">
+            <summary>
+            订单状态 -1订单取消 0-等待支付 1-等待确认 2-待发货 3-待收货 4-完成
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.PayState">
+            <summary>
+            支付状态  0-等待支付    1-已支付
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.PayTime">
+            <summary>
+            支付时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.ReceiverInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.RefundTime">
+            <summary>
+            退货时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.IsPrint">
+            <summary>
+            是否打印成功1已打印0未打印
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.ExpressName">
+            <summary>
+            物流公司名称
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.FreightNum">
+            <summary>
+            货运单号
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.RefundState">
+            <summary>
+            退货状态0未申请退货 1买家已申请退货(等待卖家同意) 2卖家已同意退款(等待买家退货) 3买家已退货(等待卖家确认收货) 4卖家确认收货(退款成功) 5卖家不同意退款申请(退款关闭)
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.RefundExpress">
+            <summary>
+            物流公司
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.RefundNum">
+            <summary>
+            退货物流单号
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.RefundReason">
+            <summary>
+            退货原因
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.RefundImgs">
+            <summary>
+            退货图片凭证多图逗号分隔
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.ConfirmTime">
+            <summary>
+            订单确认时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.OrderRemark">
+            <summary>
+            订单备注
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.PosID">
+            <summary>
+            结算台id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.Rfids">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.StoreId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.Integral">
+            <summary>
+            第三方积分抵扣数
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.IsSync">
+            <summary>
+            是否同步到第三方
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.Origin">
+            <summary>
+            订单来源 1微商城  2微商城小程序 3结算台 4超市扫标签 5收银台 6运营商后台
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.IsSyncWms">
+            <summary>
+            是否已同步库存到进销存系统
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.CouponId">
+            <summary>
+            卡券id，如果订单使用了红包或优惠则生效
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.Currency">
+            <summary>
+            结算币种，vmall_index表中currency
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.Employeeid">
+            <summary>
+            收银台当前操作员工id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.GuestId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.MemberId">
+            <summary>
+            会员id,表示该订单属于哪个member_id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.ComId">
+            <summary>
+            运营商id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.Forex">
+            <summary>
+            汇率，当前币种到人名币的汇率
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.FinishTime">
+            <summary>
+            订单完成时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.PaymentType">
+             <summary>
+             新版订单支付方式 
+            1线上支付 2信用 3付款码 4刷脸
+            5免密 11余额
+            20 现金 21刷卡
+             </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.PaymentThridType">
+            <summary>
+            第三方支付类型 微信1 支付宝2
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.OrderInfo.PaymentChannel">
+            <summary>
+            支付渠道 普通商户1  服务商2
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Sales.DiscountDetail">
+            <summary>
+            优惠详情
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentInfo">
+            <summary>
+            新版支付方式
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentInfo.PaymentType">
+            <summary>
+            新版支付方式
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentInfo.PaymentThirdType">
+            <summary>
+            第三方支付类型
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentInfo.PaymentChannel">
+            <summary>
+            支付渠道
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType">
+            <summary>
+            新版支付方式
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.WebScan">
+            <summary>
+            会员支付(终端)，o2o线上支付
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.Credit">
+            <summary>
+            信用支付(蚂蚁花呗)
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.ParymentCode">
+            <summary>
+            付款码
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.Face">
+            <summary>
+            刷脸
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.Free">
+            <summary>
+            第三方免密
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.Balance">
+            <summary>
+            余额
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.Cash">
+            <summary>
+            现金
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentType.Card">
+            <summary>
+            刷卡
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentThirdType">
+            <summary>
+            第三方支付类型
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentThirdType.None">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentThirdType.WechatPay">
+            <summary>
+            微信支付
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentThirdType.AliPay">
+            <summary>
+            支付宝
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentChannel">
+            <summary>
+            支付渠道
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentChannel.None">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentChannel.OrdinaryMerchant">
+            <summary>
+            普通商户
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.BrandShop.Sales.PaymentChannel.ServiceProvider">
+            <summary>
+            服务商
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.EntityBase">
+            <summary>
+            实体规约
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.EntityBase.Key">
+            <summary>
+            Ant表格专用,DB无用
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Entitys.EntityBase.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Entitys.EntityBase.GetSugarDbSelectFileds(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            资源塑性参数提取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Entitys.EntityBase.GetColumns">
+            <summary>
+            获取实体列描述
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo">
+            <summary>
+             实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.BrandId">
+            <summary>
+            加盟商id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.DeviceId">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.StoreId">
+            <summary>
+            门店iD
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.UserId">
+            <summary>
+            用户id或者游客id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.LogTime">
+            <summary>
+            日志产生时间，设备终端时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.Type">
+            <summary>
+            业务类型，具体看文档
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.Des">
+            <summary>
+            业务描述
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.Accach">
+            <summary>
+            日志附加信息
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.SourceType">
+            <summary>
+            设备为终端设备类型，站点为业务模块，后台为业务模块
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.SourceName">
+            <summary>
+            设备为包名，站点为host,后台为当前记录日志所在类全路径
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.SourceVersion">
+            <summary>
+            设备为包版本，站点为日志组件版本，后台为当前记录日志所在项目版本
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.Ip">
+            <summary>
+            请求ip
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.Referer">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.Useragent">
+            <summary>
+            客户端标识
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackInfo.CreateTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyLog.TrackTypeInfo">
+            <summary>
+             日志类型实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackTypeInfo.Id">
+            <summary>
+            追踪码
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackTypeInfo.Des">
+            <summary>
+            追踪描述
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyLog.TrackTypeInfo.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo">
+            <summary>
+            游客信息，所有来源统一基数据 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo.Black">
+            <summary>
+            是否拉黑 1是 0否
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo.Obsolete">
+            <summary>
+            是否作废 1是 0否(作废后无法继续使用,但历史轨迹查询任然有效)
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo.Gender">
+            <summary>
+            0 未知，1男 ，2女
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.GuestInfo.Beauty">
+            <summary>
+            美丑打分，范围0-100，越大表示越美
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyUser.V_GuestInfo">
+            <summary>
+            游客信息，所有来源统一基数据 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.V_GuestInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.V_GuestInfo.Type">
+            <summary>
+            身份标识类型枚举ENUM('mobile', 'face', 'wechat', 'alipay', 'wechatMini', 'alipayMini')
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.V_GuestInfo.TypeName">
+            <summary>
+            身份标识类型枚举说明
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.V_GuestInfo.Content">
+            <summary>
+            身份标识内容
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.V_GuestInfo.BrandId">
+            <summary>
+            加盟商id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.V_GuestInfo.UserInfo">
+            <summary>
+            正式用户信息
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyUser.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.Gender.Male">
+            <summary>
+            男性
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.Gender.Female">
+            <summary>
+            女性
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyUser.GuestTypeEnum">
+            <summary>
+            游客类型
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.GuestTypeEnum.other">
+            <summary>
+            其他（当前不支持的类型）
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.GuestTypeEnum.mobile">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.GuestTypeEnum.face">
+            <summary>
+            人脸
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.GuestTypeEnum.wechat">
+            <summary>
+            微信
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.GuestTypeEnum.wechatMini">
+            <summary>
+            微信小程序
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Entitys.GzyUser.GuestTypeEnum.alipay">
+            <summary>
+            支付宝
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyUser.UserGuestMapInfo">
+            <summary>
+             实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserGuestMapInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserGuestMapInfo.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserGuestMapInfo.GuestId">
+            <summary>
+            其他身份标识
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserGuestMapInfo.BrandId">
+            <summary>
+            加盟商id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserGuestMapInfo.CreateTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Entitys.GzyUser.UserInfo">
+            <summary>
+            用户信息 实体
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.ComId">
+            <summary>
+            运营商id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.BrandId">
+            <summary>
+            加盟商id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.StoreId">
+            <summary>
+            门店id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.FaceId">
+            <summary>
+            人脸标识(guest_id)
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.MobileId">
+            <summary>
+            手机标识(guest_id)
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.Name">
+            <summary>
+            用户昵称
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.Remark">
+            <summary>
+            用户备注
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.Black">
+            <summary>
+            是否拉黑 1拉黑 0未拉黑
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Entitys.GzyUser.UserInfo.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.DateTimeExtension">
+            <summary>
+            Datetime扩展
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.DateTimeExtension.ConvertToTimeStamp(System.DateTime,System.Boolean)">
+            <summary>
+            日期转换为时间戳(默认为13位毫秒时间戳) 
+            </summary>
+            <param name="dateTime">日期</param>
+            <param name="isMilli">是否毫秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.DateTimeExtension.ConvertToDateTime(System.Int64,System.Boolean)">
+            <summary>
+            时间戳转换为日期（时间戳单位:默认毫秒）
+            </summary>
+            <param name="timeStamp">时间戳</param>
+            <param name="isMilli">是否毫秒时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.EncryptExtension">
+            <summary>
+            加解密
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.EncryptExtension.MD5(System.String)">
+            <summary>
+            MD5
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.EncryptExtension.HMACMD5(System.String)">
+            <summary>
+            HMACMD5
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.EncryptExtension.HMACSHA1(System.String)">
+            <summary>
+            HMACSHA1
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.EncryptExtension.HMACSHA256(System.String)">
+            <summary>
+            HMACSHA256
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.EncryptExtension.HMACSHA512(System.String)">
+            <summary>
+            HMACSHA512
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.ExpressionExtension">
+            <summary>
+            表达式树静态扩展
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.ExpressionExtension.True``1">
+            <summary>
+            默认True
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.ExpressionExtension.False``1">
+            <summary>
+            默认False
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.ExpressionExtension.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Or
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr1"></param>
+            <param name="expr2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.ExpressionExtension.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            And
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr1"></param>
+            <param name="expr2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.GenerateExpression">
+            <summary>
+            构建表达式树
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.GenerateExpression.GenerateQueryExpression``1(OA.Ocpay.Core.Extensions.FilterCollection)">
+            <summary>
+            条件表达式树生成
+            list<filter>内or  多个list</filter>and
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.GenerateExpression.GenerateOrderExpression``1(System.String)">
+            <summary>
+            生成排序Expression
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.GenerateExpression.GenerateSelectExpression``2(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            生成映射Expression
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="properties">映射属性集合，小写</param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.FilterCollection">
+            <summary>
+            表达式树构造参数集合
+            list 内部 or
+            list 之间 and
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.FilterCollection.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.ExpressionFilter">
+            <summary>
+            表达式树构造参数
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.ExpressionFilter.#ctor(System.String,System.Object,OA.Ocpay.Core.Extensions.Operation)">
+            <summary>
+            构造器
+            </summary>
+            <param name="propertyName">属性名称，不区分大小写</param>
+            <param name="value">属性值,valueType 需要转 string</param>
+            <param name="op">操作条件</param>
+        </member>
+        <member name="P:OA.Ocpay.Core.Extensions.ExpressionFilter.PropertyName">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Extensions.ExpressionFilter.Operation">
+            <summary>
+            操作
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Extensions.ExpressionFilter.Value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.Operation">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.Equals">
+            <summary>
+            等于
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.GreaterThan">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.LessThan">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.GreaterThanOrEqual">
+            <summary>
+            大于等于
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.LessThanOrEqual">
+            <summary>
+            小于等于
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.Contains">
+            <summary>
+            包含
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.StartsWith">
+            <summary>
+            指定值开始
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Extensions.Operation.EndsWith">
+             <summary>
+            指定值结尾
+             </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.SerializeExtension">
+            <summary>
+            Serialize扩展
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.SerializeExtension.ToJson(System.Object,System.Boolean)">
+            <summary>
+            序列化json字符串
+            </summary>
+            <param name="obj"></param>
+            <param name="ignoreNull"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.SerializeExtension.FromJson``1(System.String)">
+            <summary>
+            反序列化对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="jsonStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.SerializeExtension.SerializeUtf8(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.SerializeExtension.DeserializeUtf8(System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="stream"></param>
+             <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Extensions.StringExtension">
+            <summary>
+            字符串操作扩展
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.StringExtension.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            string.IsNullOrWhiteSpace
+            </summary>
+            <param name="inputStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.StringExtension.Empty(System.String,System.String)">
+            <summary>
+            空值替换
+            </summary>
+            <param name="str"></param>
+            <param name="inputStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.StringExtension.FirstUpper(System.String)">
+            <summary>
+            首字母大写
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Extensions.StringExtension.FirstLower(System.String)">
+            <summary>
+            首字母小写
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.Data.AppRole">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.Data.AppUser">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Identity.Data.AppUser.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Identity.Data.AppUser.Status">
+            <summary>
+            状态 1正常 0禁止登陆
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.Data.AppUserRole">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.Data.AppUserClaim">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.Data.AppUserLogin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.Data.AppUserToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.Data.AppRoleClaim">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Identity.TxIdentityServiceCollectionExtensions">
+            <summary>
+            Identity 入口扩展
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Identity.TxIdentityServiceCollectionExtensions.AddTxIdentity(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            添加 Identity 身份认证
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters">
+            <summary>
+            查询资源参数基类
+            实现分页 筛选 排序
+            所有Query字段必须携带
+            警告：请勿轻易添加属性，否则可能会影响整个底层扩展参数化查询
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.PageNo">
+            <summary>
+            分页页码
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.PageSize">
+            <summary>
+            分页页尺寸
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.SortField">
+            <summary>
+            排序列
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.SortOrder">
+            <summary>
+            排序 ascend descend
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.Fields">
+            <summary>
+            资源塑形
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.IsAsc">
+            <summary>
+            是否升序排序SortField字段 
+            根据sortorder字段判断
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.GetDbSelectFileds``1">
+            <summary>
+            资源塑性参数提取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.GetOrderExpression``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            通用排序参数获取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="defaultExpression">如果为空返则返回该默认对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.GetSelectExpression``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            通用映射参数获取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.QueryViewModels.BaseQueryParameters.GetQueryExpression``1">
+            <summary>
+            通用查询数获取
+            过滤此基类属性  其他都为自定义查询条件，实现所有查询条件为 and 关系
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackQueryParamers">
+            <summary>
+            追踪日志查询参数集合
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackQueryParamers.BrandId">
+            <summary>
+            加盟商id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackQueryParamers.Des">
+            <summary>
+            描述模糊查询
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackQueryParamers.DeviceId">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackQueryParamers.StoreId">
+            <summary>
+            门店iD
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackQueryParamers.UserId">
+            <summary>
+            用户id或者游客id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackQueryParamers.Type">
+            <summary>
+            业务类型，具体看文档
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackTypeQueryParamers">
+            <summary>
+            追踪日志类型 查询参数集合
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackTypeQueryParamers.Id">
+            <summary>
+            追踪码
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackTypeQueryParamers.Des">
+            <summary>
+            追踪描述
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.GzyLog.TrackTypeQueryParamers.Platform">
+            <summary>
+            终端类型
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.QueryViewModels.Mch.ComIndexQueryParamers">
+            <summary>
+            运营商查询参数
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.Mch.ComIndexQueryParamers.ComName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.QueryViewModels.Mch.DeviceQueryParamers">
+            <summary>
+            运营商查询参数
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.Mch.DeviceQueryParamers.DeviceName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.Mch.DeviceQueryParamers.BrandId">
+            <summary>
+            品牌名
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.Mch.DeviceQueryParamers.DeviceInfo">
+            <summary>
+            设备编号
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.QueryViewModels.Mch.StoreQueryParamers">
+            <summary>
+            门店查询参数
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.Mch.StoreQueryParamers.StoreId">
+            <summary>
+            门店id
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.Mch.StoreQueryParamers.StoreLogo">
+            <summary>
+            Logo
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.QueryViewModels.Sales.OrderQueryParamers">
+            <summary>
+            订单查询参数
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.QueryViewModels.Sales.OrderQueryParamers.OrderNum">
+            <summary>
+            订单编号
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Repositorys.BaseRepository`1">
+            <summary>
+            仓储基类
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.BaseRepository`1.ConnectionConfigKey">
+            <summary>
+            链接字符串
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.BaseRepository`1.DbType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.BaseRepository`1.Context">
+            <summary>
+            当前数据库上下文
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.BaseRepository`1.Db">
+            <summary>
+            当前SugarClinet
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Ocpay.Core.Repositorys.SugarDbContext})">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.Init">
+            <summary>
+            Init DBContext
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.InsertReturnEntityAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            插入并返回实体
+            </summary>
+            <param name="entity"></param>
+            <param name="columns">不插入的列</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.InsertAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="list">带插入数据实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.GetModelAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据Where条件获取实体
+            </summary>
+            <param name="expression">条件 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.GetListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean,System.Int32)">
+            <summary>
+            根据条件获取列表
+            </summary>
+            <param name="whereExpression"></param>
+            <param name="isCache"></param>
+            <param name="cacheDurationInSeconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.GetListAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.Int32)">
+            <summary>
+            根据条件获取指定返回类型列表
+            </summary>
+            <typeparam name="TResult">返回类型</typeparam>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="selectExpression">选择列 Expression</param>
+            <param name="isCache"></param>
+            <param name="cacheDurationInSeconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.LoadPageEntitiesAsync(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Boolean,System.String)">
+            <summary>
+            分页并获取数据
+            </summary>
+            <param name="pageIndex">分页页码 从1开始</param>
+            <param name="pageSize">分页页尺寸</param>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="orderExpression">排序 Expression</param>
+            <param name="select">选择输出列 Expression</param>
+            <param name="isAsc">是否升序</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.GroupStatisticsAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            分组统计并返回结果集
+            </summary>
+            <typeparam name="TResult">返回集合类型</typeparam>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="groupExpression">分组 Expression</param>
+            <param name="selectExpression">选择输出列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.ExistsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            是否存在这条记录
+            </summary>
+            <param name="whereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.TopAsync(System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String)">
+            <summary>
+            取前n条
+            </summary>
+            <param name="top"></param>
+            <param name="whereExpression"></param>
+            <param name="orderBy">id desc,name asc</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取条件记录数
+            </summary>
+            <param name="whereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.MaxAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            最大值
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="whereExpression"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.MinAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            最小值
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="whereExpression"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.SumAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            求和
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="whereExpression"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.DeleteAsync(`0)">
+            <summary>
+            删除单条记录,根据主键key，主键key必须赋值
+            </summary>        
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            删除记录，根据条件
+            </summary>
+            <param name="whereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateAsync(`0)">
+            <summary>
+            更新单条记录
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateAsync(System.Collections.Generic.List{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="list">变更后的实体集合</param>
+            <param name="columns">需要更新的列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            更新单条记录的指定列
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <param name="columns">需要更新的列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateIgnoreColumnsAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            更新单条记录(指定列不更新)
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <param name="columns">不更新的列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据条件 更新单条记录的指定列
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <param name="columns">需要更新的列</param>
+            <param name="expression">需要更新的条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,`0}})">
+            <summary>
+            根据whereExpression条件跟新columnsExpression指定的列
+            </summary>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="columnsExpression">更新列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="columnDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.BaseRepository`1.UpdateAsync(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="updateDynamicObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Repositorys.GZYConfigRepositoryBase`1">
+            <summary>
+            GZYConfig Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.GZYConfigRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Ocpay.Core.Repositorys.SugarDbContext})">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Repositorys.GzyTrackLogRepositoryBase`1">
+            <summary>
+            GzyLog Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.GzyTrackLogRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Ocpay.Core.Repositorys.SugarDbContext})">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Repositorys.GzyUserRepositoryBase`1">
+            <summary>
+            GzyUser Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.GzyUserRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Ocpay.Core.Repositorys.SugarDbContext})">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Repositorys.SugarDbContext">
+            <summary>
+            DBContext
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.SugarDbContext.ConnectionString">
+            <summary>
+            连接字符串 
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.SugarDbContext.DbName">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.SugarDbContext.DbType">
+            <summary>
+            数据库类型 
+            </summary>
+        </member>
+        <member name="P:OA.Ocpay.Core.Repositorys.SugarDbContext.Db">
+            <summary>
+            数据连接对象 
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.SugarDbContext.#ctor(System.String,Microsoft.Extensions.Logging.ILogger{OA.Ocpay.Core.Repositorys.SugarDbContext},SqlSugar.DbType,System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connectionString"></param>
+            <param name="logger"></param>
+            <param name="dbType"></param>
+            <param name="blnIsAutoCloseConnection"></param>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.SugarDbContext.GetEntityDB``1">
+            <summary>
+            获取数据库处理对象
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.SugarDbContext.GetEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            获取数据库处理对象
+            </summary>
+            <param name="db">db</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Repositorys.TxoooBrandShopRepositoryBase`1">
+            <summary>
+            TxoooBrandShop Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.TxoooBrandShopRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Ocpay.Core.Repositorys.SugarDbContext})">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Repositorys.TxoooMobileRepositoryBase`1">
+            <summary>
+            TxoooMobile Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Repositorys.TxoooMobileRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Ocpay.Core.Repositorys.SugarDbContext})">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.BaseService`1">
+            <summary>
+            服务抽象基类
+            </summary>
+        </member>
+        <member name="F:OA.Ocpay.Core.Services.BaseService`1.repositoryBase">
+            <summary>
+            仓储
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.InsertReturnEntityAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            插入并返回实体
+            </summary>
+            <param name="entity"></param>
+            <param name="columns">不插入的列</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.InsertAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="list">带插入数据实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.GetModelAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据Where条件获取实体
+            </summary>
+            <param name="expression">条件 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.GetListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean,System.Int32)">
+            <summary>
+            根据条件获取列表
+            </summary>
+            <param name="whereExpression"></param>
+            <param name="isCache"></param>
+            <param name="cacheDurationInSeconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.GetListAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.Int32)">
+            <summary>
+            根据条件获取指定返回类型列表
+            </summary>
+            <typeparam name="TResult">返回类型</typeparam>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="selectExpression">选择列 Expression</param>
+            <param name="isCache"></param>
+            <param name="cacheDurationInSeconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.LoadPageEntitiesAsync(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Boolean,System.String)">
+            <summary>
+            分页并获取数据
+            </summary>
+            <param name="pageIndex">分页页码 从1开始</param>
+            <param name="pageSize">分页页尺寸</param>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="orderExpression">排序 Expression</param>
+            <param name="select">选择输出列 Expression</param>
+            <param name="isAsc">是否升序</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.GroupStatisticsAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            分组统计并返回结果集
+            </summary>
+            <typeparam name="TResult">返回集合类型</typeparam>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="groupExpression">分组 Expression</param>
+            <param name="selectExpression">选择输出列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.ExistsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            是否存在这条记录
+            </summary>
+            <param name="whereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.TopAsync(System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String)">
+            <summary>
+            取前n条
+            </summary>
+            <param name="top"></param>
+            <param name="whereExpression"></param>
+            <param name="orderBy">id desc,name asc</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取条件记录数
+            </summary>
+            <param name="whereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.MaxAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            最大值
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="whereExpression"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.MinAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            最小值
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="whereExpression"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.SumAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            求和
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="whereExpression"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.DeleteAsync(`0)">
+            <summary>
+            删除单条记录,根据主键key，主键key必须赋值
+            </summary>        
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            删除记录，根据条件
+            </summary>
+            <param name="whereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateAsync(`0)">
+            <summary>
+            更新单条记录
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateAsync(System.Collections.Generic.List{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="list">变更后的实体集合</param>
+            <param name="columns">需要更新的列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            更新单条记录的指定列
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <param name="columns">需要更新的列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateIgnoreColumnsAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            更新单条记录(指定列不更新)
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <param name="columns">不更新的列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据条件 更新单条记录的指定列
+            </summary>
+            <param name="entity">变更后的实体</param>
+            <param name="columns">需要更新的列</param>
+            <param name="expression">需要更新的条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,`0}})">
+            <summary>
+            根据whereExpression条件跟新columnsExpression指定的列
+            </summary>
+            <param name="whereExpression">条件 Expression</param>
+            <param name="columnsExpression">更新列 Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="columnDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.BaseService`1.UpdateAsync(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="updateDynamicObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.GZYConfigServiceBase`1">
+            <summary>
+            配置泛型服务
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.GZYConfigServiceBase`1.#ctor(OA.Ocpay.Core.Repositorys.GZYConfigRepositoryBase{`0})">
+            <summary>
+            构造器
+            </summary>
+            <param name="repositoryBase"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.GzyTrackLogServiceBase`1">
+            <summary>
+            日志泛型服务
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.GzyTrackLogServiceBase`1.#ctor(OA.Ocpay.Core.Repositorys.GzyTrackLogRepositoryBase{`0})">
+            <summary>
+            默认构造器
+            </summary>
+            <param name="repositoryBase"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.GzyTrackLog.TrackTypeService">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.GzyTrackLog.TrackTypeService.#ctor(OA.Ocpay.Core.Repositorys.GzyTrackLogRepositoryBase{OA.Ocpay.Core.Entitys.GzyLog.TrackTypeInfo})">
+            <summary>
+            构造器
+            </summary>
+            <param name="repositoryBase"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.GzyUserServiceBase`1">
+            <summary>
+            新用户体系泛型服务
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.GzyUserServiceBase`1.#ctor(OA.Ocpay.Core.Repositorys.GzyUserRepositoryBase{`0})">
+            <summary>
+            构造器
+            </summary>
+            <param name="repositoryBase"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.GzyUser.GuestService">
+            <summary>
+            游客处理
+            </summary>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.GzyUser.GuestService.#ctor(OA.Ocpay.Core.Repositorys.GzyUserRepositoryBase{OA.Ocpay.Core.Entitys.GzyUser.GuestInfo})">
+            <summary>
+            
+            </summary>
+            <param name="gzyUserRepositoryBase"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.Sales.OrderService">
+            <summary>
+            订单处理
+            </summary>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.TxoooBrandShopServiceBase`1">
+            <summary>
+            主表泛型服务
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.TxoooBrandShopServiceBase`1.#ctor(OA.Ocpay.Core.Repositorys.TxoooBrandShopRepositoryBase{`0})">
+            <summary>
+            构造器
+            </summary>
+            <param name="repositoryBase"></param>
+        </member>
+        <member name="T:OA.Ocpay.Core.Services.TxoooMobileServiceBase`1">
+            <summary>
+            主表泛型服务
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Ocpay.Core.Services.TxoooMobileServiceBase`1.#ctor(OA.Ocpay.Core.Repositorys.TxoooMobileRepositoryBase{`0})">
+            <summary>
+            构造器
+            </summary>
+            <param name="repositoryBase"></param>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.IdentitySqlSugarBuilderExtensions">
+            <summary>
+            Contains extension methods to <see cref="T:Microsoft.AspNetCore.Identity.IdentityBuilder"/> for adding entity framework stores.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.IdentitySqlSugarBuilderExtensions.AddSqlSugarStores``1(Microsoft.AspNetCore.Identity.IdentityBuilder)">
+            <summary>
+            添加一个实体身份信息 SqlSugarCore 存储的框架实现。
+            </summary>
+            <typeparam name="TContext">实体框架数据库上下文</typeparam>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityBuilder"/> instance this method extends.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Identity.IdentityBuilder"/> instance this method extends.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`1">
+            <summary>
+            Creates a new instance of a persistence store for roles.
+            </summary>
+            <typeparam name="TRole">The type of the class representing a role</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`1.#ctor(SqlSugar.ISqlSugarClient,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`1"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`2">
+            <summary>
+            Creates a new instance of a persistence store for roles.
+            </summary>
+            <typeparam name="TRole">The type of the class representing a role.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`2.#ctor(`1,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`2"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`3">
+            <summary>
+            Creates a new instance of a persistence store for roles.
+            </summary>
+            <typeparam name="TRole">The type of the class representing a role.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+            <typeparam name="TKey">The type of the primary key for a role.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`3.#ctor(`1,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`3"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5">
+            <summary>
+            Creates a new instance of a persistence store for roles.
+            </summary>
+            <typeparam name="TRole">The type of the class representing a role.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+            <typeparam name="TKey">The type of the primary key for a role.</typeparam>
+            <typeparam name="TUserRole">The type of the class representing a user role.</typeparam>
+            <typeparam name="TRoleClaim">The type of the class representing a role claim.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.#ctor(`1,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.Context">
+            <summary>
+            Gets the database context for this store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.ErrorDescriber">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/> for any error that occurred with the current operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.AutoExecuteCommand">
+            <summary>
+            Gets or sets a flag indicating if changes should be persisted after CreateAsync, UpdateAsync and DeleteAsync are called.
+            </summary>
+            <value>
+            True if changes should be automatically persisted, otherwise false.
+            </value>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.ExecuteCommand``1(SqlSugar.IInsertable{``0},System.Threading.CancellationToken)">
+            <summary>Saves the current store.</summary>
+            <param name="insertable">The <see cref="T:SqlSugar.IInsertable`1"/> iinsertable executecommand.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.CreateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new role in a store as an asynchronous operation.
+            </summary>
+            <param name="role">The role to create in the store.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the asynchronous query.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.UpdateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Updates a role in a store as an asynchronous operation.
+            </summary>
+            <param name="role">The role to update in the store.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the asynchronous query.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.DeleteAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a role from the store as an asynchronous operation.
+            </summary>
+            <param name="role">The role to delete from the store.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the asynchronous query.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.GetRoleIdAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Gets the ID for a role from the store as an asynchronous operation.
+            </summary>
+            <param name="role">The role whose ID should be returned.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the ID of the role.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.GetRoleNameAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Gets the name of a role from the store as an asynchronous operation.
+            </summary>
+            <param name="role">The role whose name should be returned.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the name of the role.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.SetRoleNameAsync(`0,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sets the name of a role in the store as an asynchronous operation.
+            </summary>
+            <param name="role">The role whose name should be set.</param>
+            <param name="roleName">The name of the role.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.ConvertIdFromString(System.String)">
+            <summary>
+            Converts the provided <paramref name="id"/> to a strongly typed key object.
+            </summary>
+            <param name="id">The id to convert.</param>
+            <returns>An instance of <typeparamref name="TKey"/> representing the provided <paramref name="id"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.ConvertIdToString(`2)">
+            <summary>
+            Converts the provided <paramref name="id"/> to its string representation.
+            </summary>
+            <param name="id">The id to convert.</param>
+            <returns>An <see cref="T:System.String"/> representation of the provided <paramref name="id"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.FindByIdAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finds the role who has the specified ID as an asynchronous operation.
+            </summary>
+            <param name="id">The role ID to look for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that result of the look up.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.FindByNameAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finds the role who has the specified normalized name as an asynchronous operation.
+            </summary>
+            <param name="normalizedName">The normalized role name to look for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that result of the look up.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.GetNormalizedRoleNameAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get a role's normalized name as an asynchronous operation.
+            </summary>
+            <param name="role">The role whose normalized name should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the name of the role.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.SetNormalizedRoleNameAsync(`0,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Set a role's normalized name as an asynchronous operation.
+            </summary>
+            <param name="role">The role whose normalized name should be set.</param>
+            <param name="normalizedName">The normalized name to set</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.ThrowIfDisposed">
+            <summary>
+            Throws if this class has been disposed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.Dispose">
+            <summary>
+            Dispose the stores
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.GetClaimsAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get the claims associated with the specified <paramref name="role"/> as an asynchronous operation.
+            </summary>
+            <param name="role">The role whose claims should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the claims granted to a role.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.AddClaimAsync(`0,System.Security.Claims.Claim,System.Threading.CancellationToken)">
+            <summary>
+            Adds the <paramref name="claim"/> given to the specified <paramref name="role"/>.
+            </summary>
+            <param name="role">The role to add the claim to.</param>
+            <param name="claim">The claim to add to the role.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.RemoveClaimAsync(`0,System.Security.Claims.Claim,System.Threading.CancellationToken)">
+            <summary>
+            Removes the <paramref name="claim"/> given from the specified <paramref name="role"/>.
+            </summary>
+            <param name="role">The role to remove the claim from.</param>
+            <param name="claim">The claim to remove from the role.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.Roles">
+            <summary>
+            Roles 在 RoleManager 中有对 IQueryableRoleStore{TRole} 接口 Roles 引用
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.RoleStore`5.CreateRoleClaim(`0,System.Security.Claims.Claim)">
+            <summary>
+            Creates an entity representing a role claim.
+            </summary>
+            <param name="role">The associated role.</param>
+            <param name="claim">The associated claim.</param>
+            <returns>The role claim entity.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`1">
+            <summary>
+            Creates a new instance of a persistence store for the specified user type.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`1.#ctor(SqlSugar.ISqlSugarClient,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`1"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`2">
+            <summary>
+            Represents a new instance of a persistence store for the specified user and role types.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`2.#ctor(`1,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`3"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`3">
+            <summary>
+            Represents a new instance of a persistence store for the specified user and role types.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+            <typeparam name="TKey">The type of the primary key for a role.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`3.#ctor(`1,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`4"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6">
+            <summary>
+            Represents a new instance of a persistence store for the specified user and role types.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+            <typeparam name="TKey">The type of the primary key for a role.</typeparam>
+            <typeparam name="TUserClaim">The type representing a claim.</typeparam>
+            <typeparam name="TUserLogin">The type representing a user external login.</typeparam>
+            <typeparam name="TUserToken">The type representing a user token.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.#ctor(`1,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Creates a new instance of the store.
+            </summary>
+            <param name="context">The context used to access the store.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/> used to describe store errors.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.Context">
+            <summary>
+            Gets the database context for this store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.UsersClient">
+            <summary>
+            SimpleClient of users.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.UserClaims">
+            <summary>
+            SimpleClient of user claims.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.UserLogins">
+            <summary>
+            SimpleClient of user logins.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.UserTokens">
+            <summary>
+            SimpleClient of user tokens.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.AutoExecuteCommand">
+            <summary>
+            Gets or sets a flag indicating if changes should be persisted after CreateAsync, UpdateAsync and DeleteAsync are called.
+            </summary>
+            <value>
+            True if changes should be automatically persisted, otherwise false.
+            </value>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.ExecuteCommand``1(SqlSugar.IInsertable{``0},System.Threading.CancellationToken)">
+            <summary>Saves the current store.</summary>
+            <param name="insertable">The <see cref="T:SqlSugar.IInsertable`1"/> iinsertable executecommand.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.CreateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Creates the specified <paramref name="user"/> in the user store.
+            </summary>
+            <param name="user">The user to create.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the creation operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.UpdateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Updates the specified <paramref name="user"/> in the user store.
+            </summary>
+            <param name="user">The user to update.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the update operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.DeleteAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the specified <paramref name="user"/> from the user store.
+            </summary>
+            <param name="user">The user to delete.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the update operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindByIdAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finds and returns a user, if any, who has the specified <paramref name="userId"/>.
+            </summary>
+            <param name="userId">The user ID to search for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the user matching the specified <paramref name="userId"/> if it exists.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindByNameAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finds and returns a user, if any, who has the specified normalized user name.
+            </summary>
+            <param name="normalizedUserName">The normalized user name to search for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the user matching the specified <paramref name="normalizedUserName"/> if it exists.
+            </returns>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.Users">
+            <summary>
+            A navigation property for the users the store contains.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindUserAsync(`2,System.Threading.CancellationToken)">
+            <summary>
+            Return a user with the matching userId if it exists.
+            </summary>
+            <param name="userId">The user's id.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindUserLoginAsync(`2,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Return a user login with the matching userId, provider, providerKey if it exists.
+            </summary>
+            <param name="userId">The user's id.</param>
+            <param name="loginProvider">The login provider name.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user login if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindUserLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Return a user login with  provider, providerKey if it exists.
+            </summary>
+            <param name="loginProvider">The login provider name.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user login if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.GetClaimsAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get the claims associated with the specified <paramref name="user"/> as an asynchronous operation.
+            </summary>
+            <param name="user">The user whose claims should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the claims granted to a user.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.AddClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+            <summary>
+            Adds the <paramref name="claims"/> given to the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to add the claim to.</param>
+            <param name="claims">The claim to add to the user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.ReplaceClaimAsync(`0,System.Security.Claims.Claim,System.Security.Claims.Claim,System.Threading.CancellationToken)">
+            <summary>
+            Replaces the <paramref name="claim"/> on the specified <paramref name="user"/>, with the <paramref name="newClaim"/>.
+            </summary>
+            <param name="user">The user to replace the claim on.</param>
+            <param name="claim">The claim replace.</param>
+            <param name="newClaim">The new claim replacing the <paramref name="claim"/>.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.RemoveClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+            <summary>
+            Removes the <paramref name="claims"/> given from the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to remove the claims from.</param>
+            <param name="claims">The claim to remove.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.AddLoginAsync(`0,Microsoft.AspNetCore.Identity.UserLoginInfo,System.Threading.CancellationToken)">
+            <summary>
+            Adds the <paramref name="login"/> given to the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to add the login to.</param>
+            <param name="login">The login to add to the user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.RemoveLoginAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Removes the <paramref name="loginProvider"/> given from the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to remove the login from.</param>
+            <param name="loginProvider">The login to remove from the user.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.GetLoginsAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the associated logins for the specified <param ref="user"/>.
+            </summary>
+            <param name="user">The user whose associated logins to retrieve.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> for the asynchronous operation, containing a list of <see cref="T:Microsoft.AspNetCore.Identity.UserLoginInfo"/> for the specified <paramref name="user"/>, if any.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindByLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the user associated with the specified login provider and login provider key.
+            </summary>
+            <param name="loginProvider">The login provider who provided the <paramref name="providerKey"/>.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> for the asynchronous operation, containing the user, if any which matched the specified login provider and key.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindByEmailAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the user, if any, associated with the specified, normalized email address.
+            </summary>
+            <param name="normalizedEmail">The normalized email address to return the user for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The task object containing the results of the asynchronous lookup operation, the user if any associated with the specified normalized email address.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.GetUsersForClaimAsync(System.Security.Claims.Claim,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves all users with the specified claim.
+            </summary>
+            <param name="claim">The claim whose users should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> contains a list of users, if any, that contain the specified claim. 
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.FindTokenAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Find a user token if it exists.
+            </summary>
+            <param name="user">The token owner.</param>
+            <param name="loginProvider">The login provider for the token.</param>
+            <param name="name">The name of the token.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user token if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.AddUserTokenAsync(`5)">
+            <summary>
+            Add a new user token.
+            </summary>
+            <param name="token">The token to be added.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserOnlyStore`6.RemoveUserTokenAsync(`5)">
+            <summary>
+            Remove a new user token.
+            </summary>
+            <param name="token">The token to be removed.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore">
+            <summary>
+            Represents a new instance of a persistence store for users, using the default implementation
+            of <see cref="T:Microsoft.AspNetCore.Identity.IdentityUser`1"/> with a string as a primary key.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore.#ctor(SqlSugar.ISqlSugarClient,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`1">
+            <summary>
+            Creates a new instance of a persistence store for the specified user type.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`1.#ctor(SqlSugar.ISqlSugarClient,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`1"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`3">
+            <summary>
+            Represents a new instance of a persistence store for the specified user and role types.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+            <typeparam name="TRole">The type representing a role.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`3.#ctor(`2,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`3"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`4">
+            <summary>
+            Represents a new instance of a persistence store for the specified user and role types.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+            <typeparam name="TRole">The type representing a role.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+            <typeparam name="TKey">The type of the primary key for a role.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`4.#ctor(`2,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`4"/>.
+            </summary>
+            <param name="context">The <see cref="T:SqlSugar.ISqlSugarClient"/>.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9">
+            <summary>
+            Represents a new instance of a persistence store for the specified user and role types.
+            </summary>
+            <typeparam name="TUser">The type representing a user.</typeparam>
+            <typeparam name="TRole">The type representing a role.</typeparam>
+            <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
+            <typeparam name="TKey">The type of the primary key for a role.</typeparam>
+            <typeparam name="TUserClaim">The type representing a claim.</typeparam>
+            <typeparam name="TUserRole">The type representing a user role.</typeparam>
+            <typeparam name="TUserLogin">The type representing a user external login.</typeparam>
+            <typeparam name="TUserToken">The type representing a user token.</typeparam>
+            <typeparam name="TRoleClaim">The type representing a role claim.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.#ctor(`2,Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+            <summary>
+            Creates a new instance of the store.
+            </summary>
+            <param name="context">The context used to access the store.</param>
+            <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/> used to describe store errors.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.Context">
+            <summary>
+            Gets the database context for this store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.AutoExecuteCommand">
+            <summary>
+            Gets or sets a flag indicating if changes should be persisted after CreateAsync, UpdateAsync and DeleteAsync are called.
+            </summary>
+            <value>
+            True if changes should be automatically persisted, otherwise false.
+            </value>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.ExecuteCommand``1(SqlSugar.IInsertable{``0},System.Threading.CancellationToken)">
+            <summary>Saves the current store.</summary>
+            <param name="insertable">The <see cref="T:SqlSugar.IInsertable`1"/> iinsertable executecommand.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.CreateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Creates the specified <paramref name="user"/> in the user store.
+            </summary>
+            <param name="user">The user to create.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the creation operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.UpdateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Updates the specified <paramref name="user"/> in the user store.
+            </summary>
+            <param name="user">The user to update.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the update operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.DeleteAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the specified <paramref name="user"/> from the user store.
+            </summary>
+            <param name="user">The user to delete.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the update operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindByIdAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finds and returns a user, if any, who has the specified <paramref name="userId"/>.
+            </summary>
+            <param name="userId">The user ID to search for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the user matching the specified <paramref name="userId"/> if it exists.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindByNameAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finds and returns a user, if any, who has the specified normalized user name.
+            </summary>
+            <param name="normalizedUserName">The normalized user name to search for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the user matching the specified <paramref name="normalizedUserName"/> if it exists.
+            </returns>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.Users">
+            <summary>
+            A navigation property for the users the store contains.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindRoleAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Return a role with the normalized name if it exists.
+            </summary>
+            <param name="normalizedRoleName">The normalized role name.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The role if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindUserRoleAsync(`3,`3,System.Threading.CancellationToken)">
+            <summary>
+            Return a user role for the userId and roleId if it exists.
+            </summary>
+            <param name="userId">The user's id.</param>
+            <param name="roleId">The role's id.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user role if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindUserAsync(`3,System.Threading.CancellationToken)">
+            <summary>
+            Return a user with the matching userId if it exists.
+            </summary>
+            <param name="userId">The user's id.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindUserLoginAsync(`3,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Return a user login with the matching userId, provider, providerKey if it exists.
+            </summary>
+            <param name="userId">The user's id.</param>
+            <param name="loginProvider">The login provider name.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user login if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindUserLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Return a user login with  provider, providerKey if it exists.
+            </summary>
+            <param name="loginProvider">The login provider name.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user login if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.AddToRoleAsync(`0,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Adds the given <paramref name="normalizedRoleName"/> to the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to add the role to.</param>
+            <param name="normalizedRoleName">The role to add.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.RemoveFromRoleAsync(`0,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Removes the given <paramref name="normalizedRoleName"/> from the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to remove the role from.</param>
+            <param name="normalizedRoleName">The role to remove.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.GetRolesAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the roles the specified <paramref name="user"/> is a member of.
+            </summary>
+            <param name="user">The user whose roles should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the roles the user is a member of.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.IsInRoleAsync(`0,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns a flag indicating if the specified user is a member of the give <paramref name="normalizedRoleName"/>.
+            </summary>
+            <param name="user">The user whose role membership should be checked.</param>
+            <param name="normalizedRoleName">The role to check membership of</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> containing a flag indicating if the specified user is a member of the given group. If the 
+            user is a member of the group the returned value with be true, otherwise it will be false.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.GetClaimsAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get the claims associated with the specified <paramref name="user"/> as an asynchronous operation.
+            </summary>
+            <param name="user">The user whose claims should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the claims granted to a user.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.AddClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+            <summary>
+            Adds the <paramref name="claims"/> given to the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to add the claim to.</param>
+            <param name="claims">The claim to add to the user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.ReplaceClaimAsync(`0,System.Security.Claims.Claim,System.Security.Claims.Claim,System.Threading.CancellationToken)">
+            <summary>
+            Replaces the <paramref name="claim"/> on the specified <paramref name="user"/>, with the <paramref name="newClaim"/>.
+            </summary>
+            <param name="user">The user to replace the claim on.</param>
+            <param name="claim">The claim replace.</param>
+            <param name="newClaim">The new claim replacing the <paramref name="claim"/>.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.RemoveClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+            <summary>
+            Removes the <paramref name="claims"/> given from the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to remove the claims from.</param>
+            <param name="claims">The claim to remove.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.AddLoginAsync(`0,Microsoft.AspNetCore.Identity.UserLoginInfo,System.Threading.CancellationToken)">
+            <summary>
+            Adds the <paramref name="login"/> given to the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to add the login to.</param>
+            <param name="login">The login to add to the user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.RemoveLoginAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Removes the <paramref name="loginProvider"/> given from the specified <paramref name="user"/>.
+            </summary>
+            <param name="user">The user to remove the login from.</param>
+            <param name="loginProvider">The login to remove from the user.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.GetLoginsAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the associated logins for the specified <param ref="user"/>.
+            </summary>
+            <param name="user">The user whose associated logins to retrieve.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> for the asynchronous operation, containing a list of <see cref="T:Microsoft.AspNetCore.Identity.UserLoginInfo"/> for the specified <paramref name="user"/>, if any.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindByLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the user associated with the specified login provider and login provider key.
+            </summary>
+            <param name="loginProvider">The login provider who provided the <paramref name="providerKey"/>.</param>
+            <param name="providerKey">The key provided by the <paramref name="loginProvider"/> to identify a user.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> for the asynchronous operation, containing the user, if any which matched the specified login provider and key.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindByEmailAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the user, if any, associated with the specified, normalized email address.
+            </summary>
+            <param name="normalizedEmail">The normalized email address to return the user for.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The task object containing the results of the asynchronous lookup operation, the user if any associated with the specified normalized email address.
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.GetUsersForClaimAsync(System.Security.Claims.Claim,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves all users with the specified claim.
+            </summary>
+            <param name="claim">The claim whose users should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> contains a list of users, if any, that contain the specified claim. 
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.GetUsersInRoleAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves all users in the specified role.
+            </summary>
+            <param name="normalizedRoleName">The role whose users should be retrieved.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> contains a list of users, if any, that are in the specified role. 
+            </returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.FindTokenAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Find a user token if it exists.
+            </summary>
+            <param name="user">The token owner.</param>
+            <param name="loginProvider">The login provider for the token.</param>
+            <param name="name">The name of the token.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+            <returns>The user token if it exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.AddUserTokenAsync(`7)">
+            <summary>
+            Add a new user token.
+            </summary>
+            <param name="token">The token to be added.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Identity.SqlSugarCore.UserStore`9.RemoveUserTokenAsync(`7)">
+            <summary>
+            Remove a new user token.
+            </summary>
+            <param name="token">The token to be removed.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

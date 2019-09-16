@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang=zh-cmn-Hans><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/logo.png><title>购自由智能零售系统-管理平台V1</title><style>#loading-mask {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      user-select: none;
+      z-index: 9999;
+      overflow: hidden
+    }
+
+    .loading-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -100%)
+    }
+
+    .loading-dot {
+      animation: antRotate 1.2s infinite linear;
+      transform: rotate(45deg);
+      position: relative;
+      display: inline-block;
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      box-sizing: border-box
+    }
+
+    .loading-dot i {
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      display: block;
+      background-color: #1890ff;
+      border-radius: 100%;
+      transform: scale(.75);
+      transform-origin: 50% 50%;
+      opacity: .3;
+      animation: antSpinMove 1s infinite linear alternate
+    }
+
+    .loading-dot i:nth-child(1) {
+      top: 0;
+      left: 0
+    }
+
+    .loading-dot i:nth-child(2) {
+      top: 0;
+      right: 0;
+      -webkit-animation-delay: .4s;
+      animation-delay: .4s
+    }
+
+    .loading-dot i:nth-child(3) {
+      right: 0;
+      bottom: 0;
+      -webkit-animation-delay: .8s;
+      animation-delay: .8s
+    }
+
+    .loading-dot i:nth-child(4) {
+      bottom: 0;
+      left: 0;
+      -webkit-animation-delay: 1.2s;
+      animation-delay: 1.2s
+    }
+
+    @keyframes antRotate {
+      to {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg)
+      }
+    }
+
+    @-webkit-keyframes antRotate {
+      to {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg)
+      }
+    }
+
+    @keyframes antSpinMove {
+      to {
+        opacity: 1
+      }
+    }
+
+    @-webkit-keyframes antSpinMove {
+      to {
+        opacity: 1
+      }
+    }</style><link href=/css/chunk-526d7ef9.ab834657.css rel=prefetch><link href=/css/chunk-53b3acc6.e3ae2261.css rel=prefetch><link href=/css/chunk-583ee634.580ff761.css rel=prefetch><link href=/css/chunk-af271464.0bcf81fc.css rel=prefetch><link href=/css/user.eedce99a.css rel=prefetch><link href=/js/chunk-24fb6c88.b6e2f292.js rel=prefetch><link href=/js/chunk-2d0aecfc.fa9bdecd.js rel=prefetch><link href=/js/chunk-2d0c8bc6.69ff0ce2.js rel=prefetch><link href=/js/chunk-2d0e4e51.12b03534.js rel=prefetch><link href=/js/chunk-2d209ae6.a74830ae.js rel=prefetch><link href=/js/chunk-2d21e32e.da355b3a.js rel=prefetch><link href=/js/chunk-2d230886.c8ef71a5.js rel=prefetch><link href=/js/chunk-4db1fece.62b89d2b.js rel=prefetch><link href=/js/chunk-526d7ef9.132fd523.js rel=prefetch><link href=/js/chunk-53b3acc6.d2ddbb07.js rel=prefetch><link href=/js/chunk-5520cb3c.789c230c.js rel=prefetch><link href=/js/chunk-583ee634.38d34326.js rel=prefetch><link href=/js/chunk-5a47f78c.ef2a3598.js rel=prefetch><link href=/js/chunk-a5e95de8.1be8395d.js rel=prefetch><link href=/js/chunk-af271464.68c51604.js rel=prefetch><link href=/js/chunk-db3faa7e.5f809597.js rel=prefetch><link href=/js/fail.ab10a991.js rel=prefetch><link href=/js/user.f32c732c.js rel=prefetch><link href=/css/app.37d24a1e.css rel=preload as=style><link href=/css/chunk-vendors.691d2d71.css rel=preload as=style><link href=/js/app.ce66e2a7.js rel=preload as=script><link href=/js/chunk-vendors.6a330b28.js rel=preload as=script><link href=/css/chunk-vendors.691d2d71.css rel=stylesheet><link href=/css/app.37d24a1e.css rel=stylesheet></head><body><noscript><strong>很抱歉，如果没有启用javascript，系统将无法正常工作。请启用它以继续。</strong></noscript><div id=app><div id=loading-mask><div class=loading-wrapper><span class="loading-dot loading-dot-spin"><i></i><i></i><i></i><i></i></span></div></div></div><script src=/js/chunk-vendors.6a330b28.js></script><script src=/js/app.ce66e2a7.js></script></body></html>
