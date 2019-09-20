@@ -94,7 +94,7 @@
             通话线索
             </summary>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TXClue.EasyliaoTalkController.GetDayCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.EasyliaoTalkController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得每天的统计
             </summary>
@@ -123,7 +123,20 @@
             反馈
             </summary>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetDateCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetHourCount(OA.Core.Entitys.TXClue.Select.ClueWhereInfo)">
+            <summary>
+            小时 统计
+            </summary>
+            <param name="clueWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.HourColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetDateCount(OA.Core.Entitys.TXClue.Select.ClueWhereInfo)">
             <summary>
             日期统计
             </summary>
@@ -136,9 +149,9 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetNexCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetNexCount(OA.Core.Entitys.TXClue.Select.ClueWhereInfo)">
             <summary>
-            品牌 统计
+            平台 统计
             </summary>
             <param name="clueWhereInfo"></param>
             <returns></returns>
@@ -149,7 +162,20 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetBrandCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetMeiaCount(OA.Core.Entitys.TXClue.Select.ClueWhereInfo)">
+            <summary>
+            媒体 统计
+            </summary>
+            <param name="clueWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.MediaColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutFeebackController.GetBrandCount(OA.Core.Entitys.TXClue.Select.ClueWhereInfo)">
             <summary>
             品牌 统计
             </summary>
@@ -167,7 +193,7 @@
             通话线索
             </summary>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutTxIDController.GetDayCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TXClue.ClueOutTxIDController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得每天的统计
             </summary>
@@ -231,6 +257,39 @@
             获得每天的统计
             </summary>
             <param name="clueWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetKeyword(OA.Core.Entitys.Summary_Data.Select.KeywordWhereInfo)">
+            <summary>
+            关键词 统计
+            </summary>
+            <param name="keywordWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.KeywordColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetQuery(OA.Core.Entitys.Summary_Data.Select.KeywordWhereInfo)">
+            <summary>
+            搜索词 统计
+            </summary>
+            <param name="keywordWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.QueryColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetKeywordSearch(System.String)">
+            <summary>
+            搜索词 模糊搜索
+            </summary>
+            <param name="keyword"></param>
             <returns></returns>
         </member>
         <member name="T:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController">
@@ -303,12 +362,19 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.SEMKeywordController.GetKeywordSearch(System.String)">
+            <summary>
+            搜索词 模糊搜索
+            </summary>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
         <member name="T:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController">
             <summary>
             通话线索
             </summary>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetDayCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得每天的统计
             </summary>
@@ -334,7 +400,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetNexCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetNexCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得平台的统计
             </summary>
@@ -347,7 +413,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetMediaCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetMediaCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得媒体的统计
             </summary>
@@ -360,7 +426,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetBrandCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetBrandCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得品牌的统计
             </summary>
@@ -373,7 +439,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TXCall.ClueInfoController.GetDayCount(OA.Core.QueryViewModels.ClueWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.TXCall.ClueInfoController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得每天的统计
             </summary>
