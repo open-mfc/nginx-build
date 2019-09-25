@@ -1,4 +1,17 @@
 
+.project-list .card-title a[data-v-5e9653bb]:hover{color:#1890ff}
+.project-list .project-item a[data-v-5e9653bb]:hover{color:#1890ff}
+.members a:hover span[data-v-5e9653bb]{color:#1890ff}
+.page-header-wrapper-grid-content-main .account-center-team .members a:hover span[data-v-c9d3df08]{color:#1890ff}
+.user-layout-login .user-login-other .item-icon[data-v-7dae163e]:hover{color:#1890ff}
+a[data-v-c94e1a86]{color:#1890ff}
+a[data-v-c94e1a86]:hover{color:#40a9ff}
+a[data-v-c94e1a86]:active{color:#096dd9}
+[data-v-c94e1a86]::-moz-selection{background:#1890ff}
+[data-v-c94e1a86]::selection{background:#1890ff}
+.ant-click-animating-node[data-v-c94e1a86],[ant-click-animating-without-extra-node][data-v-c94e1a86]:after{border:0 solid #1890ff}
+.antd-pro-pages-forms-style-errorListItem[data-v-d90d1788]:hover{background:#e6f7ff}
+.ant-card-actions li a[data-v-b4d7b03c]:hover{color:#1890ff}
 a[data-v-3935b0ba]{color:#1890ff}
 a[data-v-3935b0ba]:hover{color:#40a9ff}
 a[data-v-3935b0ba]:active{color:#096dd9}
@@ -47,19 +60,6 @@ a:active{color:#096dd9}
 .ant-click-animating-node,[ant-click-animating-without-extra-node]:after{border:0 solid #1890ff}
 .layout.ant-layout .header .user-wrapper .action .avatar,.layout.ant-layout .top-nav-header-index .user-wrapper .action .avatar{color:#1890ff}
 tr:nth-of-type(2n){background-color:#e6f7ff}
-.project-list .card-title a[data-v-5e9653bb]:hover{color:#1890ff}
-.project-list .project-item a[data-v-5e9653bb]:hover{color:#1890ff}
-.members a:hover span[data-v-5e9653bb]{color:#1890ff}
-.page-header-wrapper-grid-content-main .account-center-team .members a:hover span[data-v-c9d3df08]{color:#1890ff}
-.user-layout-login .user-login-other .item-icon[data-v-7dae163e]:hover{color:#1890ff}
-a[data-v-c94e1a86]{color:#1890ff}
-a[data-v-c94e1a86]:hover{color:#40a9ff}
-a[data-v-c94e1a86]:active{color:#096dd9}
-[data-v-c94e1a86]::-moz-selection{background:#1890ff}
-[data-v-c94e1a86]::selection{background:#1890ff}
-.ant-click-animating-node[data-v-c94e1a86],[ant-click-animating-without-extra-node][data-v-c94e1a86]:after{border:0 solid #1890ff}
-.antd-pro-pages-forms-style-errorListItem[data-v-d90d1788]:hover{background:#e6f7ff}
-.ant-card-actions li a[data-v-b4d7b03c]:hover{color:#1890ff}
 .ant-alert-info{border:1px solid #91d5ff;background-color:#e6f7ff}
 .ant-alert-info .ant-alert-icon{color:#1890ff}
 .ant-anchor-ink-ball{border:2px solid #1890ff}

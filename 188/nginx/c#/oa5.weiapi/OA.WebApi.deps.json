@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "0b0c74672efe28d23351acfcdbe90af0e00ef6a7"
+    "signature": "76bedbc560437f4feeae47074e24281ae9378fb4"
   },
   "compilationOptions": {
     "defines": [
@@ -36,8 +36,8 @@
           "Serilog.Settings.Configuration": "3.1.0",
           "Serilog.Sinks.Console": "3.1.1",
           "Serilog.Sinks.File": "4.0.0",
-          "Serilog.Sinks.RollingFile": "3.3.0",
-          "Swashbuckle.AspNetCore": "4.0.1"
+          "Swashbuckle.AspNetCore": "4.0.1",
+          "Txooo.DotNetCore": "1.0.0"
         },
         "runtime": {
           "OA.WebApi.dll": {}
@@ -416,24 +416,6 @@
         },
         "compile": {
           "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
-        }
-      },
-      "Serilog.Sinks.RollingFile/3.3.0": {
-        "dependencies": {
-          "Serilog.Sinks.File": "4.0.0",
-          "System.IO": "4.3.0",
-          "System.IO.FileSystem.Primitives": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "3.3.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/1.1.12": {
@@ -827,8 +809,20 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "Txooo.DotNetCore/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Txooo.DotNetCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Txooo.DotNetCore.dll": {}
+        }
+      },
       "OA.Core/1.0.0": {
         "dependencies": {
+          "Txooo.DotNetCore": "1.0.0",
           "sqlSugarCore": "5.0.0.9"
         },
         "runtime": {
@@ -4213,13 +4207,6 @@
       "path": "serilog.sinks.file/4.0.0",
       "hashPath": "serilog.sinks.file.4.0.0.nupkg.sha512"
     },
-    "Serilog.Sinks.RollingFile/3.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2lT5X1r3GH4P0bRWJfhA7etGl8Q2Ipw9AACvtAHWRUSpYZ42NGVyHoVs2ALBZ/cAkkS+tA4jl80Zie144eLQPg==",
-      "path": "serilog.sinks.rollingfile/3.3.0",
-      "hashPath": "serilog.sinks.rollingfile.3.3.0.nupkg.sha512"
-    },
     "SQLitePCLRaw.bundle_green/1.1.12": {
       "type": "package",
       "serviceable": true,
@@ -4373,6 +4360,13 @@
       "sha512": "sha512-saGfUV8uqVW6LeURiqxcGhZ24PzuRNaUBtbhVeuUAvky1naH395A/1nY0P2bWvrw/BreRtIB/EzTDkGBpqCwEw==",
       "path": "system.threading.timer/4.0.1",
       "hashPath": "system.threading.timer.4.0.1.nupkg.sha512"
+    },
+    "Txooo.DotNetCore/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oWBCYrNd1ZeXDI49U15YbIYe+hcfIwKdopl5IEfVbYH/fHc5i0mkEizvmuPh6OQzliyn00cJbMl4OEHpvD5FMQ==",
+      "path": "txooo.dotnetcore/1.0.0",
+      "hashPath": "txooo.dotnetcore.1.0.0.nupkg.sha512"
     },
     "OA.Core/1.0.0": {
       "type": "project",

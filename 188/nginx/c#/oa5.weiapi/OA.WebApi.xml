@@ -259,7 +259,7 @@
             <param name="clueWhereInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetKeyword(OA.Core.Entitys.Summary_Data.Select.KeywordWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetKeyword(OA.Core.QueryViewModels.Summary_Data.KeywordWhereInfo)">
             <summary>
             关键词 统计
             </summary>
@@ -272,7 +272,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetQuery(OA.Core.Entitys.Summary_Data.Select.KeywordWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetQuery(OA.Core.QueryViewModels.Summary_Data.KeywordWhereInfo)">
             <summary>
             搜索词 统计
             </summary>
@@ -292,12 +292,77 @@
             <param name="keyword"></param>
             <returns></returns>
         </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetAccount(OA.Core.QueryViewModels.Summary_Data.KeywordWhereInfo)">
+            <summary>
+            账户 统计
+            </summary>
+            <param name="keywordWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.AccountColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetPlan(OA.Core.QueryViewModels.Summary_Data.KeywordWhereInfo)">
+            <summary>
+            计划 统计
+            </summary>
+            <param name="keywordWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.PlanColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetUnit(OA.Core.QueryViewModels.Summary_Data.KeywordWhereInfo)">
+            <summary>
+            单元 统计
+            </summary>
+            <param name="keywordWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.UnitColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetKeywordWater(OA.Core.QueryViewModels.Summary_Data.KeywordWhereInfo)">
+            <summary>
+            关键词  流水列表
+            </summary>
+            <param name="keywordWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.KeywordWaterColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.GetKeywordQueryWater(OA.Core.QueryViewModels.Summary_Data.KeywordWhereInfo)">
+            <summary>
+            搜索词 流水列表
+            </summary>
+            <param name="keywordWhereInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KeywordSummaryController.KeywordQueryWaterColunms">
+            <summary>
+            获取列标识信息
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController">
             <summary>
             通话线索
             </summary>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetDateCount(OA.Core.Entitys.Summary_Data.Select.KfWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetDateCount(OA.Core.QueryViewModels.Summary_Data.KfWhereInfo)">
             <summary>
             获得每天的统计
             </summary>
@@ -310,7 +375,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetHourCount(OA.Core.Entitys.Summary_Data.Select.KfWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetHourCount(OA.Core.QueryViewModels.Summary_Data.KfWhereInfo)">
             <summary>
             获得每小时的统计
             </summary>
@@ -323,7 +388,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetNexCount(OA.Core.Entitys.Summary_Data.Select.KfWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetNexCount(OA.Core.QueryViewModels.Summary_Data.KfWhereInfo)">
             <summary>
             获得平台的统计
             </summary>
@@ -336,7 +401,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetMediaCount(OA.Core.Entitys.Summary_Data.Select.KfWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetMediaCount(OA.Core.QueryViewModels.Summary_Data.KfWhereInfo)">
             <summary>
             获得媒体的统计
             </summary>
@@ -349,7 +414,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetBrandCount(OA.Core.Entitys.Summary_Data.Select.KfWhereInfo)">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.KfSummaryController.GetBrandCount(OA.Core.QueryViewModels.Summary_Data.KfWhereInfo)">
             <summary>
             获得品牌的统计
             </summary>
@@ -362,6 +427,14 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.SEMAccountController.GetListByType(System.Int32,System.String)">
+            <summary>
+            根据媒体查询
+            </summary>
+            <param name="mediaId"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
         <member name="M:OA.WebApi.Controllers.v1.Summary_Data.SEMKeywordController.GetKeywordSearch(System.String)">
             <summary>
             搜索词 模糊搜索
@@ -369,74 +442,20 @@
             <param name="keyword"></param>
             <returns></returns>
         </member>
-        <member name="T:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.SEMPlanController.GetListByAccount(System.Int32,System.String)">
             <summary>
-            通话线索
+            根据账户查询
             </summary>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
-            <summary>
-            获得每天的统计
-            </summary>
-            <param name="clueWhereInfo"></param>
+            <param name="accountId"></param>
+            <param name="name"></param>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.Colunms">
+        <member name="M:OA.WebApi.Controllers.v1.Summary_Data.SEMUnitController.GetListByPlan(System.Int32,System.String)">
             <summary>
-            获取列标识信息
+            根据计划查询
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetHourCount(OA.Core.QueryViewModels.TalkInfo.HourWhereInfo)">
-            <summary>
-            获得每小时的统计
-            </summary>
-            <param name="clueWhereInfo"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.HourColunms">
-            <summary>
-            获取列标识信息
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetNexCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
-            <summary>
-            获得平台的统计
-            </summary>
-            <param name="clueWhereInfo"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.NexColunms">
-            <summary>
-            获取列标识信息
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetMediaCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
-            <summary>
-            获得媒体的统计
-            </summary>
-            <param name="clueWhereInfo"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.MediaColunms">
-            <summary>
-            获取列标识信息
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.GetBrandCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
-            <summary>
-            获得品牌的统计
-            </summary>
-            <param name="clueWhereInfo"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OA.WebApi.Controllers.v1.TalkInfo.TalkIndexController.BrandColunms">
-            <summary>
-            获取列标识信息
-            </summary>
+            <param name="planId"></param>
+            <param name="name"></param>
             <returns></returns>
         </member>
         <member name="M:OA.WebApi.Controllers.v1.TXCall.ClueInfoController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
@@ -492,6 +511,16 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="P:OA.WebApi.Controllers.v1.V1BaseController`2.ExportFactory">
+            <summary>
+            excel导出
+            </summary>
+        </member>
+        <member name="P:OA.WebApi.Controllers.v1.V1BaseController`2.AntColumns">
+            <summary>
+            Ant Ui 表头信息
+            </summary>
+        </member>
         <member name="P:OA.WebApi.Controllers.v1.V1BaseController`2.BaseService">
             <summary>
             基础实现
@@ -537,6 +566,15 @@
             修改单条记录(整体修改)
             </summary>
             <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.V1BaseController`2.Exprotxcel(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="list">待导出的数据集</param>
+            <param name="colunmFields">导出列选择，空导出所有列</param>
+            <param name="fileName">文件名，不包括扩展名</param>
             <returns></returns>
         </member>
         <member name="T:OA.WebApi.Controllers.v2.DemoController">
