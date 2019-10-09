@@ -6152,7 +6152,7 @@
             当前数据库上下文
             </summary>
         </member>
-        <member name="P:OA.Core.Repositorys.BaseRepository`1.Db">
+        <member name="P:OA.Core.Repositorys.BaseRepository`1.db">
             <summary>
             当前SugarClinet
             </summary>
