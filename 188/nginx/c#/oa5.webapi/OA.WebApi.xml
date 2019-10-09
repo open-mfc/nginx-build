@@ -1539,5 +1539,10 @@
             主菜单
             </summary>
         </member>
+        <member name="P:OA.WebApi.ViewModles.UserViewModel.MenuPop">
+            <summary>
+            pop菜单
+            </summary>
+        </member>
     </members>
 </doc>
