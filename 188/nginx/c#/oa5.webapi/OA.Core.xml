@@ -6483,14 +6483,20 @@
             数据连接对象 
             </summary>
         </member>
-        <member name="M:OA.Core.Repositorys.SugarDbContext.#ctor(System.String,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},SqlSugar.DbType,System.Boolean)">
+        <member name="M:OA.Core.Repositorys.SugarDbContext.#ctor(System.String,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},SqlSugar.DbType)">
             <summary>
             构造函数
             </summary>
             <param name="connectionString"></param>
             <param name="logger"></param>
             <param name="dbType"></param>
-            <param name="blnIsAutoCloseConnection"></param>
+        </member>
+        <member name="M:OA.Core.Repositorys.SugarDbContext.GetClient(System.Boolean)">
+            <summary>
+            获取数据库连接
+            </summary>
+            <param name="isAutoCloseConnection"></param>
+            <returns></returns>
         </member>
         <member name="M:OA.Core.Repositorys.SugarDbContext.GetEntityDB``1">
             <summary>
