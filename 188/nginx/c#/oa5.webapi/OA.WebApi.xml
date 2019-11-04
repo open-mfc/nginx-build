@@ -526,6 +526,18 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountApplyController.#ctor(OA.Core.Services.TxoooSEM35ServiceBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo})">
+            <summary>
+            
+            </summary>
+            <param name="txoooSEM35ServiceBase"></param>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountController.#ctor(OA.Core.Services.TxoooSEM35ServiceBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo})">
+            <summary>
+            
+            </summary>
+            <param name="txoooSEM35ServiceBase"></param>
+        </member>
         <member name="M:OA.WebApi.Controllers.v1.TXCall.ClueInfoController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得每天的统计

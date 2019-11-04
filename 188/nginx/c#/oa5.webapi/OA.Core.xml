@@ -4802,6 +4802,91 @@
             
             </summary>
         </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo">
+            <summary>
+            异常账户申请 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.AccountId">
+            <summary>
+            账户id
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.EmployeeId">
+            <summary>
+            员工id
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.EmployeeName">
+            <summary>
+            员工姓名
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.ApplyTime">
+            <summary>
+            申请时间
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.PredictRunTime">
+            <summary>
+            预估执行时间
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.RunStatus">
+            <summary>
+            运行状态（1 申请 待运行，2运行完成）
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.RunTime">
+            <summary>
+            实际执行时间
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo.Remark">
+            <summary>
+            申请备注
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo">
+            <summary>
+            api异常账户 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo.AccountId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo.ExceptionMsg">
+            <summary>
+            错误描述
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo.StackTrace">
+            <summary>
+            错误堆栈
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo.BusinessType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:OA.Core.Entitys.TxoooSEM.AccountInfo">
             <summary>
             推广账户 实体
@@ -6656,6 +6741,26 @@
             <param name="configuration"></param>
             <param name="logger"></param>
         </member>
+        <member name="T:OA.Core.Repositorys.TxoooSEM35RepositoryBase`1">
+            <summary>
+             Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Core.Repositorys.TxoooSEM35RepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:OA.Core.Repositorys.TxoooSEM35RepositoryBase`1.GetSearchDayWhere(OA.Core.QueryViewModels.SummaryData.KeywordWhereInfo)">
+            <summary>
+            搜索词条件
+            </summary>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
         <member name="T:OA.Core.Repositorys.TxoooSEMRepositoryBase`1">
             <summary>
              Repository
@@ -7274,6 +7379,18 @@
             <typeparam name="TEntity"></typeparam>
         </member>
         <member name="M:OA.Core.Services.TxoooOfficeServiceBase`1.#ctor(OA.Core.Repositorys.TxoooOfficeRepositoryBase{`0})">
+            <summary>
+            构造器
+            </summary>
+            <param name="repositoryBase"></param>
+        </member>
+        <member name="T:OA.Core.Services.TxoooSEM35ServiceBase`1">
+            <summary>
+            主表泛型服务
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35ServiceBase`1.#ctor(OA.Core.Repositorys.TxoooSEM35RepositoryBase{`0})">
             <summary>
             构造器
             </summary>
