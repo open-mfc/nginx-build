@@ -85,6 +85,160 @@
             常量
             </summary>
         </member>
+        <member name="T:OA.Core.Common.MemoryCache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            
+            </summary>
+            <param name="memoryCache"></param>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.Add``1(System.String,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.Add``1(System.String,``0,System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="cacheDurationInSeconds"></param>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.ContainsKey``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.Get``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.GetAllKey``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.GetOrCreate``1(System.String,System.Func{``0},System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="cacheKey"></param>
+            <param name="create"></param>
+            <param name="cacheDurationInSeconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCache.Remove``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+        </member>
+        <member name="P:OA.Core.Common.MemoryCacheHelper`1.Item(System.String)">
+             <summary>         
+            根据key获取value     
+             </summary>         
+             <value></value>      
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.ContainsKey(System.String)">
+            <summary>         
+            key是否存在       
+            </summary>         
+            <param name="key">key</param>         
+            <returns> ///  存在<c>true</c> 不存在<c>false</c>.        /// /// </returns>         
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Get(System.String)">
+            <summary>         
+            获取缓存值         
+            </summary>         
+            <param name="key">key</param>         
+            <returns></returns>         
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.GetInstance(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>         
+            获取实例 （单例模式）       
+            </summary>         
+            <returns></returns>         
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Add(System.String,`0)">
+            <summary>         
+            插入缓存(默认20分钟)        
+            </summary>         
+            <param name="key"> key</param>         
+            <param name="value">value</param>          
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Add(System.String,`0,System.Int32)">
+            <summary>         
+            插入缓存.         
+            </summary>         
+            <param name="key">key</param>         
+            <param name="value">value</param>         
+            <param name="cacheDurationInSeconds">过期时间单位秒</param>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Remove(System.String)">
+            <summary>         
+            删除缓存         
+            </summary>         
+            <param name="key">key</param>         
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.RemoveAll">
+            <summary>
+            清除所有缓存
+            </summary>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.RemoveAll(System.Func{System.String,System.Boolean})">
+            <summary>
+            清除所有包含关键字的缓存
+            </summary>
+            <param name="removeExpression"></param>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.GetAllKey">
+            <summary>
+            获取所有缓存key
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper`1.CreateKey(System.String)">
+             <summary>         
+            创建KEY   
+             </summary>         
+             <param name="key">Key</param>         
+             <returns></returns>         
+        </member>
+        <member name="T:OA.Core.Common.CacheTimeConstants">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Common.CacheTimeConstants.CacheCRMClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Common.CacheTimeConstants.CacheEmployee">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:OA.Core.Common.OA4TxUserTicket">
             <summary>
             OA4 用户票证
@@ -4802,6 +4956,498 @@
             
             </summary>
         </member>
+        <member name="T:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo">
+            <summary>
+            员工列表 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Gender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.IsMarried">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.BirthDay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.IDCard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Literacy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Specialty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Mobile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Photo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.IsDimissory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.StructID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.ParentID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.StructName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.ParentName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.IsDepartment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.NativeAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.CardName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.NowAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.Nation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.EnityTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.PositiveTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.GraduateSchool">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.RankStr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.RankIdStr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.IsMain">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.DingdingUserid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo.IsInDepartment(System.Int32[])">
+            <summary>
+            是否是指定部门员工
+            </summary>
+            <param name="partIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooOffice.EmployeeSimpleInfo">
+            <summary>
+            简易员工列表
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.EmployeeSimpleInfo.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooOffice.EmployeeSimpleInfo.Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo">
+            <summary>
+            AccountApiAuthAgent 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.AgentId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.Username">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.Token">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.AppId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.AppKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.MccAk">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.MccSk">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthAgentInfo.BceUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo">
+            <summary>
+            AccountApiAuth 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.AccountId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.LoginUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.LoginUsername">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.LoginPassword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.LoginAk">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.LoginSk">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.AccessToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.TokenTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.RefreshToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.AddTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.AgentId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.AgentUse">
+            <summary>
+            是否启用代理管家授权登录
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.BceUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.Domain">
+            <summary>
+            开户域名
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.Company">
+            <summary>
+            开户公司名
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.OpenType">
+            <summary>
+            账户性质 0未知 1框架户 2官网户
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo.SecretMobile">
+            <summary>
+            密保手机
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.AccountApiInfo">
+            <summary>
+            AccountApi 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.AccountId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiIsDynamicCreative">
+            <summary>
+            子链开关
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiBudget">
+            <summary>
+            预算(消费限额)
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiRegionTarget">
+            <summary>
+            推广地域
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiBudgetOfflineTime">
+            <summary>
+            账户最近下线时间
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiPayment">
+            <summary>
+            投资总额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiOpenDomains">
+            <summary>
+            开放域名
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiExcludeIp">
+            <summary>
+            	
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiRegDomain">
+            <summary>
+            	
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiUserStat">
+            <summary>
+            用户状态
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiCost">
+            <summary>
+            消费总额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiBalance">
+            <summary>
+            推广共享包金额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiPcBalance">
+            <summary>
+            基准资金包金额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiMobileBalance">
+            <summary>
+            无线优惠资金包金额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiBudgetType">
+            <summary>
+            预算类型
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiUserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiDynamicCreativeParam">
+            <summary>
+            动态创意统计参数
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiBalancePackage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiUaStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.ApiValidFlows">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.SyncTime">
+            <summary>
+            最后一次同步时间
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountApiInfo.Status">
+            <summary>
+            API是否开始：0、暂停，1、启用，2、异常停止，其他错误状态
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.AccountInfo">
+            <summary>
+            Account 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.AccountId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.AccountName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.AccountStatus">
+            <summary>
+            -1未知 0停用 1启动
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.AccountMasterIn">
+            <summary>
+            内部负责人 员工id  旧：TxoooSEM库Employee_Map
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.AccountMasterOut">
+            <summary>
+            外部负责人
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.MediaId">
+            <summary>
+            媒体id   TxoooCRM2013.CRM_Class parent_id = 21446
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.MediaProduct">
+            <summary>
+            媒体产品id （账户渠道） TxoooCRM2013.CRM_Class parent_id = 22643
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.UsageId">
+            <summary>
+            内部用途（账户用途） TxoooCRM2013.CRM_Class parent_id = 20337
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.GroupId">
+            <summary>
+            账户分组 TxoooCRM2013.CRM_Class parent_id = 22553
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.TeamId">
+            <summary>
+            梯队 TxoooCRM2013.CRM_Class parent_id = 22625
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.ServiceId">
+            <summary>
+            业务团队（服务类型) TxoooCRM2013.CRM_Class parent_id = 22547
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.NexId">
+            <summary>
+            服务标识（所属平台) TxoooCRM2013.CRM_Class parent_id = 20025
+            </summary>
+        </member>
         <member name="T:OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo">
             <summary>
             异常账户申请 实体
@@ -4883,6 +5529,241 @@
             </summary>
         </member>
         <member name="P:OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo">
+            <summary>
+            获取账户列表 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.Status">
+            <summary>
+            API是否开始：0、暂停，1、启用，2、异常停止，其他错误状态
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.StatusName">
+            <summary>
+            API是否开始：0、暂停，1、启用，2、异常停止，其他错误状态
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.AccountId">
+            <summary>
+            账户ID
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.AccountName">
+            <summary>
+            账户名称
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.AccountMasterIn">
+            <summary>
+            内部负责人 员工id  旧：TxoooSEM库Employee_Map
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.AccountMasterInName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.AccountMasterOut">
+            <summary>
+            外部负责人
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.MediaId">
+            <summary>
+            媒体id   TxoooCRM2013.CRM_Class parent_id = 21446
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.MediaName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.MediaProduct">
+            <summary>
+            媒体产品id （账户渠道） TxoooCRM2013.CRM_Class parent_id = 22643
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.MediaProductName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.UsageId">
+            <summary>
+            内部用途（账户用途） TxoooCRM2013.CRM_Class parent_id = 20337
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.UsageName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.GroupId">
+            <summary>
+            账户分组 TxoooCRM2013.CRM_Class parent_id = 22553
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.GroupName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.TeamId">
+            <summary>
+            梯队 TxoooCRM2013.CRM_Class parent_id = 22625
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.TeamName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ServiceId">
+            <summary>
+            业务团队（服务类型) TxoooCRM2013.CRM_Class parent_id = 22547
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ServiceName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.NexId">
+            <summary>
+            服务标识（所属平台) TxoooCRM2013.CRM_Class parent_id = 20025
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.NexName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiIsDynamicCreative">
+            <summary>
+            子链开关
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiBudget">
+            <summary>
+            预算(消费限额)
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiPayment">
+            <summary>
+            投资总额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiRegDomain">
+            <summary>
+            账户注册域名
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiUserStat">
+            <summary>
+            用户状态
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiCost">
+            <summary>
+            消费总额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiBalance">
+            <summary>
+            推广共享包金额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiPcBalance">
+            <summary>
+            基准资金包金额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiMobileBalance">
+            <summary>
+            无线优惠资金包金额
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiBudgetType">
+            <summary>
+            预算类型
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiUserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiDynamicCreativeParam">
+            <summary>
+            动态创意统计参数
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiBalancePackage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiUaStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ApiValidFlows">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.SyncTime">
+            <summary>
+            最后一次同步时间
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEM35.CrmClassEnum">
+            <summary>
+            各种账户分类
+            </summary>
+        </member>
+        <member name="F:OA.Core.Entitys.TxoooSEM35.CrmClassEnum.Media">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Entitys.TxoooSEM35.CrmClassEnum.MediaProduct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Entitys.TxoooSEM35.CrmClassEnum.UsageId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Entitys.TxoooSEM35.CrmClassEnum.GroupId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Entitys.TxoooSEM35.CrmClassEnum.TeamId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Entitys.TxoooSEM35.CrmClassEnum.ServiceId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OA.Core.Entitys.TxoooSEM35.CrmClassEnum.NexId">
             <summary>
             
             </summary>
@@ -6216,11 +7097,53 @@
             
             </summary>
         </member>
+        <member name="T:OA.Core.QueryViewModels.TxoooOffice.EmployeeParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooOffice.EmployeeParameters.DepartMent">
+            <summary>
+            部门 逗号分隔
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooOffice.EmployeeParameters.EIds">
+            <summary>
+            员工 逗号分隔
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooOffice.EmployeeParameters.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="T:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountMasterIn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountId">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:OA.Core.Repositorys.BaseRepository`1">
             <summary>
             仓储基类
             </summary>
             <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Core.Repositorys.BaseRepository`1.GetExpression(System.Tuple{System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}}[])">
+            <summary>
+            动态拼接条件
+            </summary>
+            <param name="tuples"></param>
+            <returns></returns>
         </member>
         <member name="P:OA.Core.Repositorys.BaseRepository`1.ConnectionConfigKey">
             <summary>
@@ -6242,12 +7165,13 @@
             当前SugarClinet
             </summary>
         </member>
-        <member name="M:OA.Core.Repositorys.BaseRepository`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.BaseRepository`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="M:OA.Core.Repositorys.BaseRepository`1.Init">
             <summary>
@@ -6325,7 +7249,7 @@
             <param name="cacheDurationInSeconds"></param>
             <returns></returns>
         </member>
-        <member name="M:OA.Core.Repositorys.BaseRepository`1.LoadPageEntitiesAsync(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Boolean)">
+        <member name="M:OA.Core.Repositorys.BaseRepository`1.LoadPageEntitiesAsync(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Boolean,System.Boolean,System.Int32)">
             <summary>
             分页并获取数据
             </summary>
@@ -6334,6 +7258,8 @@
             <param name="whereExpression">条件 Expression</param>
             <param name="orderExpression">排序 Expression</param>
             <param name="isAsc">是否升序</param>
+            <param name="isCache"></param>
+            <param name="cacheDurationInSeconds"></param>
             <returns></returns>
         </member>
         <member name="M:OA.Core.Repositorys.BaseRepository`1.LoadPageWhereAsync``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}[])">
@@ -6536,12 +7462,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.OOKFTalkInfoRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.OOKFTalkInfoRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.SugarDbContext">
             <summary>
@@ -6568,12 +7495,13 @@
             数据连接对象 
             </summary>
         </member>
-        <member name="M:OA.Core.Repositorys.SugarDbContext.#ctor(System.String,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},SqlSugar.DbType)">
+        <member name="M:OA.Core.Repositorys.SugarDbContext.#ctor(System.String,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache,SqlSugar.DbType)">
             <summary>
             构造函数
             </summary>
             <param name="connectionString"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
             <param name="dbType"></param>
         </member>
         <member name="M:OA.Core.Repositorys.SugarDbContext.GetClient(System.Boolean)">
@@ -6602,12 +7530,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.SummaryDataRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.SummaryDataRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="M:OA.Core.Repositorys.SummaryDataRepositoryBase`1.GetSearchDayWhere(OA.Core.QueryViewModels.SummaryData.KeywordWhereInfo)">
             <summary>
@@ -6622,12 +7551,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TalkInfoRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TalkInfoRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TXCallRepositoryBase`1">
             <summary>
@@ -6635,12 +7565,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TXCallRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TXCallRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TXClueRepositoryBase`1">
             <summary>
@@ -6648,12 +7579,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TXClueRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TXClueRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="M:OA.Core.Repositorys.TXClueRepositoryBase`1.GetFeebackWhere(OA.Core.Entitys.TXClue.Output.ClueWhereInfo)">
             <summary>
@@ -6682,12 +7614,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TxoooBrandsRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TxoooBrandsRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TxoooCRM2013RepositoryBase`1">
             <summary>
@@ -6695,12 +7628,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TxoooCRM2013RepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TxoooCRM2013RepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TxoooMobileRepositoryBase`1">
             <summary>
@@ -6708,12 +7642,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TxoooMobileRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TxoooMobileRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TxoooNExRepositoryBase`1">
             <summary>
@@ -6721,12 +7656,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TxoooNExRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TxoooNExRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TxoooOfficeRepositoryBase`1">
             <summary>
@@ -6734,12 +7670,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TxoooOfficeRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TxoooOfficeRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TxoooSEM35RepositoryBase`1">
             <summary>
@@ -6747,12 +7684,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TxoooSEM35RepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TxoooSEM35RepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="M:OA.Core.Repositorys.TxoooSEM35RepositoryBase`1.GetSearchDayWhere(OA.Core.QueryViewModels.SummaryData.KeywordWhereInfo)">
             <summary>
@@ -6767,12 +7705,13 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:OA.Core.Repositorys.TxoooSEMRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext})">
+        <member name="M:OA.Core.Repositorys.TxoooSEMRepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             构造器
             </summary>
             <param name="configuration"></param>
             <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Services.BaseService`1">
             <summary>
@@ -6788,6 +7727,13 @@
             <summary>
             构造器
             </summary>
+        </member>
+        <member name="M:OA.Core.Services.BaseService`1.GetExpression(System.Tuple{System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}}[])">
+            <summary>
+            
+            </summary>
+            <param name="tuples"></param>
+            <returns></returns>
         </member>
         <member name="M:OA.Core.Services.BaseService`1.InsertReturnEntityAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
             <summary>
@@ -7395,6 +8341,26 @@
             构造器
             </summary>
             <param name="repositoryBase"></param>
+        </member>
+        <member name="T:OA.Core.Services.TxoooSEM35.AccountService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.#ctor(OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo},OA.Core.Services.TxoooCRM2013ServiceBase{OA.Core.Entitys.TxoooCRM2013.CRMClassInfo},OA.Core.Services.TxoooOfficeServiceBase{OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo})">
+            <summary>
+            
+            </summary>
+            <param name="repositoryBase"></param>
+            <param name="txoooCRM2013ServiceBase"></param>
+            <param name="txoooOfficeServiceBase"></param>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.GetAccountList(OA.Core.QueryViewModels.BaseQueryParameters)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
         </member>
         <member name="T:OA.Core.Services.TxoooSEMServiceBase`1">
             <summary>

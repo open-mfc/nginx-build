@@ -526,6 +526,19 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.OldEmployeeController.#ctor(OA.Core.Services.TxoooOfficeServiceBase{OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo})">
+            <summary>
+            
+            </summary>
+            <param name="txoooOfficeServiceBase"></param>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.OldEmployeeController.GetEmployeeList(OA.Core.QueryViewModels.TxoooOffice.EmployeeParameters)">
+            <summary>
+            获取员工列表
+            </summary>
+            <param name="employeeParameters"></param>
+            <returns></returns>
+        </member>
         <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountApplyController.#ctor(OA.Core.Services.TxoooSEM35ServiceBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo})">
             <summary>
             
@@ -537,6 +550,19 @@
             
             </summary>
             <param name="txoooSEM35ServiceBase"></param>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.SEMAccountNewController.#ctor(OA.Core.Services.TxoooSEM35.AccountService)">
+            <summary>
+            
+            </summary>
+            <param name="accountService"></param>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.SEMAccountNewController.SetEmployee(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            获取员工列表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
         </member>
         <member name="M:OA.WebApi.Controllers.v1.TXCall.ClueInfoController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
