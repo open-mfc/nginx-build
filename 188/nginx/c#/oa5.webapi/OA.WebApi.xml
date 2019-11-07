@@ -539,17 +539,19 @@
             <param name="employeeParameters"></param>
             <returns></returns>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountApplyController.#ctor(OA.Core.Services.TxoooSEM35ServiceBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo})">
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountApplyController.#ctor(OA.Core.Services.TxoooSEM35ServiceBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo},OA.Core.Services.TxoooSEM35.AccountService)">
             <summary>
             
             </summary>
             <param name="txoooSEM35ServiceBase"></param>
+            <param name="accountService"></param>
         </member>
-        <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountController.#ctor(OA.Core.Services.TxoooSEM35ServiceBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo})">
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountController.#ctor(OA.Core.Services.TxoooSEM35ServiceBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo},OA.Core.Services.TxoooSEM35.AccountService)">
             <summary>
             
             </summary>
             <param name="txoooSEM35ServiceBase"></param>
+            <param name="accountService"></param>
         </member>
         <member name="M:OA.WebApi.Controllers.v1.SummaryData.SEMAccountNewController.#ctor(OA.Core.Services.TxoooSEM35.AccountService)">
             <summary>
@@ -559,7 +561,14 @@
         </member>
         <member name="M:OA.WebApi.Controllers.v1.SummaryData.SEMAccountNewController.SetEmployee(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
             <summary>
-            获取员工列表
+            修改内部员工列表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.SEMAccountNewController.SetAccountMasterOut(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            修改外部员工列表
             </summary>
             <param name="parameters"></param>
             <returns></returns>

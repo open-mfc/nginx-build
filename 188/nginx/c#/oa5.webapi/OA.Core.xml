@@ -376,6 +376,37 @@
             <param name="decryptStr">密文字符串</param>
             <returns>明文</returns>
         </member>
+        <member name="T:OA.Core.Common.TxExpression`1">
+            <summary>
+            表达式扩展
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:OA.Core.Common.TxExpression`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OA.Core.Common.TxExpression`1.WhereIF(System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="isWhere"></param>
+            <param name="exp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Common.TxExpression`1.ToArray">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Common.TxExpression`1.AddToExpression">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:OA.Core.Common.TxStringHelper">
             <summary>
             文本字符串处理
@@ -7132,18 +7163,21 @@
             
             </summary>
         </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountMasterOut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.Status">
+            <summary>
+            api状态
+            </summary>
+        </member>
         <member name="T:OA.Core.Repositorys.BaseRepository`1">
             <summary>
             仓储基类
             </summary>
             <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:OA.Core.Repositorys.BaseRepository`1.GetExpression(System.Tuple{System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}}[])">
-            <summary>
-            动态拼接条件
-            </summary>
-            <param name="tuples"></param>
-            <returns></returns>
         </member>
         <member name="P:OA.Core.Repositorys.BaseRepository`1.ConnectionConfigKey">
             <summary>
@@ -7153,11 +7187,6 @@
         <member name="P:OA.Core.Repositorys.BaseRepository`1.DbType">
             <summary>
             数据库类型
-            </summary>
-        </member>
-        <member name="P:OA.Core.Repositorys.BaseRepository`1.Context">
-            <summary>
-            当前数据库上下文
             </summary>
         </member>
         <member name="P:OA.Core.Repositorys.BaseRepository`1.db">
@@ -7727,13 +7756,6 @@
             <summary>
             构造器
             </summary>
-        </member>
-        <member name="M:OA.Core.Services.BaseService`1.GetExpression(System.Tuple{System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}}[])">
-            <summary>
-            
-            </summary>
-            <param name="tuples"></param>
-            <returns></returns>
         </member>
         <member name="M:OA.Core.Services.BaseService`1.InsertReturnEntityAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
             <summary>
@@ -8347,15 +8369,31 @@
             
             </summary>
         </member>
-        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.#ctor(OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo},OA.Core.Services.TxoooCRM2013ServiceBase{OA.Core.Entitys.TxoooCRM2013.CRMClassInfo},OA.Core.Services.TxoooOfficeServiceBase{OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo})">
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.#ctor(OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo},OA.Core.Services.TxoooCRM2013ServiceBase{OA.Core.Entitys.TxoooCRM2013.CRMClassInfo},OA.Core.Services.TxoooOfficeServiceBase{OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo})">
             <summary>
             
             </summary>
             <param name="repositoryBase"></param>
+            <param name="errorAccountRepositoryBase"></param>
+            <param name="errorAccountApplyRepositoryBase"></param>
             <param name="txoooCRM2013ServiceBase"></param>
             <param name="txoooOfficeServiceBase"></param>
         </member>
-        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.GetAccountList(OA.Core.QueryViewModels.BaseQueryParameters)">
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.GetAccountList(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.GetErrorAccount(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            获得错误api信息
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.GetErrorAccountApply(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
             <summary>
             
             </summary>
