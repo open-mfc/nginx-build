@@ -5634,11 +5634,6 @@
             
             </summary>
         </member>
-        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.GroupId">
-            <summary>
-            账户分组 TxoooCRM2013.CRM_Class parent_id = 22553
-            </summary>
-        </member>
         <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.GroupName">
             <summary>
             
@@ -7153,12 +7148,22 @@
             
             </summary>
         </member>
-        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountMasterIn">
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.Status">
+            <summary>
+            api状态
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountId">
             <summary>
             
             </summary>
         </member>
-        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountId">
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.AccountMasterIn">
             <summary>
             
             </summary>
@@ -7168,9 +7173,34 @@
             
             </summary>
         </member>
-        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.Status">
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.MediaId">
             <summary>
-            api状态
+            媒体id   TxoooCRM2013.CRM_Class parent_id = 21446
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.MediaProduct">
+            <summary>
+            媒体产品id （账户渠道） TxoooCRM2013.CRM_Class parent_id = 22643
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.UsageId">
+            <summary>
+            内部用途（账户用途） TxoooCRM2013.CRM_Class parent_id = 20337
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.TeamId">
+            <summary>
+            梯队 TxoooCRM2013.CRM_Class parent_id = 22625
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.ServiceId">
+            <summary>
+            业务团队（服务类型) TxoooCRM2013.CRM_Class parent_id = 22547
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.NexId">
+            <summary>
+            服务标识（所属平台) TxoooCRM2013.CRM_Class parent_id = 20025
             </summary>
         </member>
         <member name="T:OA.Core.Repositorys.BaseRepository`1">
@@ -8381,7 +8411,7 @@
         </member>
         <member name="M:OA.Core.Services.TxoooSEM35.AccountService.GetAccountList(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
             <summary>
-            
+            获得账户列表
             </summary>
             <param name="parameters"></param>
             <returns></returns>
