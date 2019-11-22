@@ -573,6 +573,20 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.AccountDayReportController.#ctor(OA.Core.Services.TxoooSEMReport35ServiceBase{OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo},OA.Core.Services.TxoooSEM35.AccountDayService)">
+            <summary>
+            
+            </summary>
+            <param name="repositoryBase"></param>
+            <param name="accountDayBase"></param>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.AccountDayReportController.GetAccountDay(OA.Core.QueryViewModels.TxoooSEMReport35.AccountDayParameters)">
+            <summary>
+            获取账户日报表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
         <member name="M:OA.WebApi.Controllers.v1.TXCall.ClueInfoController.GetDayCount(OA.Core.QueryViewModels.ClueCurrencyWhereInfo)">
             <summary>
             获得每天的统计
@@ -624,6 +638,25 @@
             修改单条记录(整体修改)
             </summary>
             <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.WebApi.Controllers.v1.TxoooSEMReport35.PlanDayReportController">
+            <summary>
+            计划日报表
+            </summary>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.TxoooSEMReport35.PlanDayReportController.#ctor(OA.Core.Services.TxoooSEMReport35ServiceBase{OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo},OA.Core.Services.TxoooSEM35.PlanDayService)">
+            <summary>
+            
+            </summary>
+            <param name="txoooSEMReport35ServiceBase"></param>
+            <param name="planDayServiceBase"></param>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.TxoooSEMReport35.PlanDayReportController.GetPlanDayReport(OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters)">
+            <summary>
+            获取计划日报表
+            </summary>
+            <param name="parameters"></param>
             <returns></returns>
         </member>
         <member name="M:OA.WebApi.Controllers.v1.TxoooSEM.SEMAccountController.GetListByType(System.Int32,System.String)">

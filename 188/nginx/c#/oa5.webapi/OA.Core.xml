@@ -5794,6 +5794,186 @@
             
             </summary>
         </member>
+        <member name="T:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo">
+            <summary>
+            账户日报表 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.VYear">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.VMonth">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.VDay">
+            <summary>
+            日
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.VDate">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.AccountId">
+            <summary>
+            账户Id
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.AccountType">
+            <summary>
+            账户类型
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.UserId">
+            <summary>
+            第三方ID
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.UserName">
+            <summary>
+            第三方名称
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.Cost">
+            <summary>
+            账户累积消费
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.Cpc">
+            <summary>
+            点击均价
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.Impression">
+            <summary>
+             展示数
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.Ctr">
+            <summary>
+            点击率
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.Cpm">
+            <summary>
+            千次展现均价
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.Click">
+            <summary>
+            点击数
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.AccountDayInfo.SyncTime">
+            <summary>
+            API同步时间
+            </summary>
+        </member>
+        <member name="T:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo">
+            <summary>
+            PlanDay 实体
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.VYear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.VMonth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.VDay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.VDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.AccountId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.AccountType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.CampaignId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.CampaignName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.Cost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.Impression">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.Click">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.Ctr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.Cpc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.Cpm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo.SyncTime">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:OA.Core.Entitys.TxoooSEM.AccountInfo">
             <summary>
             推广账户 实体
@@ -7203,6 +7383,61 @@
             服务标识（所属平台) TxoooCRM2013.CRM_Class parent_id = 20025
             </summary>
         </member>
+        <member name="T:OA.Core.QueryViewModels.TxoooSEMReport35.AccountDayParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.AccountDayParameters.AccountId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.AccountDayParameters.StartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.AccountDayParameters.EndTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters.AccountId">
+            <summary>
+            账户ID
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters.PlanId">
+            <summary>
+            计划ID
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters.CampaignName">
+            <summary>
+            计划名
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters.vDate">
+            <summary>
+            日期查询
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters.StartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters.EndTime">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:OA.Core.Repositorys.BaseRepository`1">
             <summary>
             仓储基类
@@ -7757,6 +7992,20 @@
             </summary>
             <param name="where"></param>
             <returns></returns>
+        </member>
+        <member name="T:OA.Core.Repositorys.TxoooSEMReport35RepositoryBase`1">
+            <summary>
+             Repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Core.Repositorys.TxoooSEMReport35RepositoryBase`1.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{OA.Core.Repositorys.SugarDbContext},Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            构造器
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+            <param name="memoryCache"></param>
         </member>
         <member name="T:OA.Core.Repositorys.TxoooSEMRepositoryBase`1">
             <summary>
@@ -8429,6 +8678,48 @@
             </summary>
             <param name="parameters"></param>
             <returns></returns>
+        </member>
+        <member name="T:OA.Core.Services.TxoooSEM35.AccountDayService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountDayService.GetAccountDayReport(OA.Core.QueryViewModels.TxoooSEMReport35.AccountDayParameters)">
+            <summary>
+            获得账户日报表信息
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Core.Services.TxoooSEM35.PlanDayService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.PlanDayService.#ctor(OA.Core.Repositorys.TxoooSEMReport35RepositoryBase{OA.Core.Entitys.TxoooSEMReport35.PlanDayInfo})">
+            <summary>
+            
+            </summary>
+            <param name="planDayBase"></param>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.PlanDayService.GetPlanDayReport(OA.Core.QueryViewModels.TxoooSEMReport35.PlanDayParameters)">
+            <summary>
+            获得账户日报表信息
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OA.Core.Services.TxoooSEMReport35ServiceBase`1">
+            <summary>
+            主表泛型服务
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEMReport35ServiceBase`1.#ctor(OA.Core.Repositorys.TxoooSEMReport35RepositoryBase{`0})">
+            <summary>
+            构造器
+            </summary>
+            <param name="repositoryBase"></param>
         </member>
         <member name="T:OA.Core.Services.TxoooSEMServiceBase`1">
             <summary>
