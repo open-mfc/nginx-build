@@ -6004,6 +6004,11 @@
             账户累积消费
             </summary>
         </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCAccountRebateInfo.XianJin">
+            <summary>
+            应收款
+            </summary>
+        </member>
         <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCAccountRebateInfo.Cpc">
             <summary>
             点击均价
