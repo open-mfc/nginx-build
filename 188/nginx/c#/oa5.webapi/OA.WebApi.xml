@@ -285,6 +285,11 @@
             品牌名称
             </summary>
         </member>
+        <member name="P:OA.WebApi.Controllers.v1.TXClue.BrandIndexWhere.BrandId">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:OA.WebApi.Controllers.v1.TXClue.CRMClassController">
             <summary>
             媒体分类
@@ -303,6 +308,11 @@
         <member name="P:OA.WebApi.Controllers.v1.TXClue.BrandWhere.BrandName">
             <summary>
             品牌名称
+            </summary>
+        </member>
+        <member name="P:OA.WebApi.Controllers.v1.TXClue.BrandWhere.BrandId">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:OA.WebApi.Controllers.v1.TXClue.ClassTagController">
@@ -604,6 +614,13 @@
             <param name="options"></param>
         </member>
         <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountApplyController.InsertApply(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            申请入库
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.WebApi.Controllers.v1.SummaryData.ErrorAccountApplyController.InsertApplyPl(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
             <summary>
             申请入库
             </summary>
