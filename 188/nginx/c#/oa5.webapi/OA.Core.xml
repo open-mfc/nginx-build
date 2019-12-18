@@ -153,40 +153,46 @@
             <typeparam name="T"></typeparam>
             <param name="key"></param>
         </member>
-        <member name="P:OA.Core.Common.MemoryCacheHelper`1.Item(System.String)">
-             <summary>         
-            根据key获取value     
-             </summary>         
-             <value></value>      
+        <member name="T:OA.Core.Common.MemoryCacheHelper">
+            <summary>
+            缓存帮助类
+            </summary>
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.ContainsKey(System.String)">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.ContainsKey(System.String)">
             <summary>         
             key是否存在       
             </summary>         
             <param name="key">key</param>         
             <returns> ///  存在<c>true</c> 不存在<c>false</c>.        /// /// </returns>         
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Get(System.String)">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.Get``1(System.String)">
             <summary>         
             获取缓存值         
             </summary>         
             <param name="key">key</param>         
             <returns></returns>         
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.GetInstance(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.Get(System.String)">
+            <summary>         
+            获取缓存值         
+            </summary>         
+            <param name="key">key</param>         
+            <returns></returns>         
+        </member>
+        <member name="M:OA.Core.Common.MemoryCacheHelper.GetInstance(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>         
             获取实例 （单例模式）       
             </summary>         
             <returns></returns>         
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Add(System.String,`0)">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.Add``1(System.String,``0)">
             <summary>         
             插入缓存(默认20分钟)        
             </summary>         
             <param name="key"> key</param>         
             <param name="value">value</param>          
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Add(System.String,`0,System.Int32)">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.Add``1(System.String,``0,System.Int32)">
             <summary>         
             插入缓存.         
             </summary>         
@@ -194,30 +200,30 @@
             <param name="value">value</param>         
             <param name="cacheDurationInSeconds">过期时间单位秒</param>
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.Remove(System.String)">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.Remove(System.String)">
             <summary>         
             删除缓存         
             </summary>         
             <param name="key">key</param>         
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.RemoveAll">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.RemoveAll">
             <summary>
             清除所有缓存
             </summary>
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.RemoveAll(System.Func{System.String,System.Boolean})">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.RemoveAll(System.Func{System.String,System.Boolean})">
             <summary>
             清除所有包含关键字的缓存
             </summary>
             <param name="removeExpression"></param>
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.GetAllKey">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.GetAllKey">
             <summary>
             获取所有缓存key
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OA.Core.Common.MemoryCacheHelper`1.CreateKey(System.String)">
+        <member name="M:OA.Core.Common.MemoryCacheHelper.CreateKey(System.String)">
              <summary>         
             创建KEY   
              </summary>         
@@ -5719,6 +5725,41 @@
             服务标识（所属平台) TxoooCRM2013.CRM_Class parent_id = 20025
             </summary>
         </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.CheckUrl">
+            <summary>
+            检测URL 0 不检测 1 检测
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.AutoSynStruct">
+            <summary>
+            url索引 0 不启用 1 启用
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.TkStatus">
+            <summary>
+            退款状态：0：正常 1：退款中 2：已退款
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.BrandId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.ZidongHandle">
+            <summary>
+            自动处理 0 关闭 1 开启
+            </summary>
+        </member>
+        <member name="P:OA.Core.Entitys.TxoooSEM35.AccountInfo.ApiEdition">
+            <summary>
+            API使用版本 0无API 1百度V4 2百度Feed
+            </summary>
+        </member>
         <member name="T:OA.Core.Entitys.TxoooSEM35.AccountRebateInfo">
             <summary>
             账户返点（消费应收款） 实体
@@ -6299,7 +6340,7 @@
             品牌id
             </summary>
         </member>
-        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ZdHandle">
+        <member name="P:OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo.ZidongHandle">
             <summary>
             自动处理
             </summary>
@@ -8298,6 +8339,21 @@
             </summary>
             <param name="s"></param>
         </member>
+        <member name="T:OA.Core.Extensions.ListExtension">
+            <summary>
+            集合扩展
+            </summary>
+        </member>
+        <member name="M:OA.Core.Extensions.ListExtension.WhereIF``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{``0,System.Boolean})">
+            <summary>
+            连续where判断
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="where"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
         <member name="T:OA.Core.Extensions.SerializeExtension">
             <summary>
             Serialize扩展
@@ -9026,6 +9082,11 @@
         <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.Name">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.Ip">
+            <summary>
+            编辑人IP
             </summary>
         </member>
         <member name="P:OA.Core.QueryViewModels.TxoooSEM35.AccountParameters.BrandId">
@@ -11080,11 +11141,12 @@
             
             </summary>
         </member>
-        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.#ctor(OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo},OA.Core.Services.TxoooCRM2013ServiceBase{OA.Core.Entitys.TxoooCRM2013.CRMClassInfo},OA.Core.Services.TxoooOfficeServiceBase{OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.AccountHistoryInfo},Microsoft.Extensions.Logging.ILogger{OA.Core.Services.TxoooSEM35.AccountService})">
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.#ctor(OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ViewOA5MFCGetAccountInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.AccountInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.AccountApiAuthInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.ErrorAccountApplyInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.AccountApiInfo},OA.Core.Services.TxoooCRM2013ServiceBase{OA.Core.Entitys.TxoooCRM2013.CRMClassInfo},OA.Core.Services.TxoooOfficeServiceBase{OA.Core.Entitys.TxoooOffice.ViewV4OAZDLEmployeeInfo},OA.Core.Repositorys.TxoooSEM35RepositoryBase{OA.Core.Entitys.TxoooSEM35.AccountHistoryInfo},Microsoft.Extensions.Logging.ILogger{OA.Core.Services.TxoooSEM35.AccountService},OA.Core.Repositorys.TxoooSEMLogRepositoryBase{OA.Core.Entitys.TxoooSEMLog.AccountLogInfo})">
             <summary>
             
             </summary>
             <param name="repositoryBase"></param>
+            <param name="accountrepositoryBase"></param>
             <param name="authRepositoryBase"></param>
             <param name="errorAccountRepositoryBase"></param>
             <param name="errorAccountApplyRepositoryBase"></param>
@@ -11092,6 +11154,8 @@
             <param name="txoooOfficeServiceBase"></param>
             <param name="accountHistoryRepositoryBase"></param>
             <param name="logger"></param>
+            <param name="txoooSEMLogRepository"></param>   
+            <param name="accountApiInfoRepositoryBase"></param>   
         </member>
         <member name="M:OA.Core.Services.TxoooSEM35.AccountService.GetAccountList(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
             <summary>
@@ -11124,6 +11188,111 @@
         <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetMCC(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
             <summary>
             设置账户MCC
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.BindBrand(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            绑定品牌
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.EditPassword(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.EditApiBudget(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            修改本地预算
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetEmployee(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            修改内部员工列表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetAccountMasterOut(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            修改外部员工列表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.EditStatus(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            修改API状态
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetServiceId(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量修改账户类型（业务团队）
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetTeamId(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量修改隶属部门
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetUsageId(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量修改账户用途
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetMediaProduct(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量修改账户渠道
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetCheckUrl(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量检测URL
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetAutoSynStruct(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量Url索引
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetTkStatus(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量退款状态
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetZdHandle(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量自动处理
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OA.Core.Services.TxoooSEM35.AccountService.SetApiEdition(OA.Core.QueryViewModels.TxoooSEM35.AccountParameters)">
+            <summary>
+            批量API使用版本
             </summary>
             <param name="parameters"></param>
             <returns></returns>
